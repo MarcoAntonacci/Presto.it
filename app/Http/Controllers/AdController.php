@@ -15,7 +15,8 @@ class AdController extends Controller
      */
     public function index()
     {
-        $ads=Ad::all();
+        // $ads=Ad::all()->sortBy('created_at');
+        $ads = Ad::orderBy('created_at', 'DESC')->get();
         return view('ad.index', compact('ads'));
     }
 
