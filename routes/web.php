@@ -21,4 +21,7 @@ Route::get('/', [PublicController::class, 'index'])->name('homepage');
 // ANNUNCI
 Route::get('/annunci/index', [AdController::class, 'index'])->name('ad.index');
 Route::get('/annunci/create', [AdController::class, 'create'])->name('ad.create')->middleware('auth');
-Route::post('/annunci/store', [AdController::class, 'store'])->name('ad.store')->middleware('auth');;
+Route::post('/annunci/store', [AdController::class, 'store'])->name('ad.store')->middleware('auth');
+
+// DETTAGLIO ANNUNCI
+Route::get('/annunci/show/{ad}', [AdController::class, 'show'])->name('ad.show');

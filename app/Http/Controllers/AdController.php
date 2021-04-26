@@ -52,7 +52,7 @@ class AdController extends Controller
      */
     public function show(Ad $ad)
     {
-        //
+        return view('ad.show', compact('ad'));
     }
 
     /**

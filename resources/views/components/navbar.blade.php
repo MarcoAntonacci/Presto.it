@@ -22,7 +22,10 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Profilo</a></li>
-              <li><a class="dropdown-item" href="#">Esci</a></li>
+              <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Esci</a></li>
+              <form method="POST" action="{{route('logout')}}" style="display: none" id="form-logout">
+                @csrf
+              </form>
             </ul>
             @else
             <li class="nav-item dropdown">
@@ -31,7 +34,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
-                <li><a class="dropdown-item" href="#">Accedi</a></li>
+                <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
               </ul>
               @endauth
           </li>
