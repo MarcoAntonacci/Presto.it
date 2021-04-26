@@ -14,7 +14,8 @@ class AdController extends Controller
      */
     public function index()
     {
-        //
+        $ads=Ad::all();
+        return view('ad.index', compact('ads'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AdController extends Controller
      */
     public function create()
     {
-        //
+        return view('ad.create');
     }
 
     /**
@@ -35,7 +36,12 @@ class AdController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ad=Ad::create([
+            'title'=>$request->title,
+            'price'=>$request->price,
+            'description'=>$request->description,
+        ]);
+        return redirect(route('ad.index'))->with('flash', 'Ottimo! Il tuo annuncio è in fase di revisione!');
     }
 
     /**

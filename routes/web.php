@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdController;
 use App\Http\Controllers\PublicController;
 
 /*
@@ -14,4 +15,10 @@ use App\Http\Controllers\PublicController;
 |
 */
 
+// GENERALE
 Route::get('/', [PublicController::class, 'index'])->name('homepage');
+
+// ANNUNCI
+Route::get('/annunci/index', [AdController::class, 'index'])->name('ad.index');
+Route::get('/annunci/create', [AdController::class, 'create'])->name('ad.create')->middleware('auth');
+Route::post('/annunci/store', [AdController::class, 'store'])->name('ad.store')->middleware('auth');;
