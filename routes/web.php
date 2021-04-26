@@ -17,6 +17,7 @@ use App\Http\Controllers\PublicController;
 
 // GENERALE
 Route::get('/', [PublicController::class, 'index'])->name('homepage');
+Route::get('/annunci/category/{cat}', [PublicController::class, 'category'])->name('category');
 
 // ANNUNCI
 Route::get('/annunci/index', [AdController::class, 'index'])->name('ad.index');

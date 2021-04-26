@@ -18,6 +18,14 @@
                   <input type="text" name="price" class="form-control" id="adPrice">
                 </div>
                 <div class="mb-3">
+                    <label for="adCategory" class="form-label">Category:</label>
+                    <select name="category">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+                <div class="mb-3">
                     <label for="adPrice" class="form-label">Descrizione annuncio:</label>
                     <textarea name="description" id="adDescription" class="form-control" cols="30" rows="10"></textarea>
                 </div>

@@ -42,7 +42,9 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$ad->title}}</h5>
                       <p class="card-text">{{$ad->price}}</p>
+                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text">{{$ad->category->name}}</p></a>
                       <p class="card-text">{{$ad->created_at->format('d/m/Y')}}</p>
+                      <hr>
                       <p class="card-text">{{$ad->description}}</p>
                       <a href="{{route('ad.index')}}" class="btn btn-primary">Torna Indietro</a>
                     </div>

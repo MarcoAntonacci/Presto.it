@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdController extends Controller
@@ -25,7 +26,8 @@ class AdController extends Controller
      */
     public function create()
     {
-        return view('ad.create');
+        $categories=Category::all();
+        return view('ad.create', compact('categories'));
     }
 
     /**
@@ -40,6 +42,7 @@ class AdController extends Controller
             'title'=>$request->title,
             'price'=>$request->price,
             'description'=>$request->description,
+            'category_id'=>$request->category
         ]);
         return redirect(route('ad.index'))->with('flash', 'Ottimo! Il tuo annuncio è in fase di revisione!');
     }
@@ -52,7 +55,8 @@ class AdController extends Controller
      */
     public function show(Ad $ad)
     {
-        return view('ad.show', compact('ad'));
+        $categories=Category::all();
+        return view('ad.show', compact('ad', 'categories'));
     }
 
     /**
