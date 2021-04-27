@@ -1,4 +1,5 @@
 <x-layout>
+    <h1 class="tc-accent">Presto.it</h1>
     <div class="container">
         <div class="row">
             @foreach ($categories as $category)
