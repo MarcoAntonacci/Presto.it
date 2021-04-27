@@ -1,12 +1,13 @@
 <x-layout>
-    <div class="container my-5">
+    <div class="container-fluid body-register h-100 m-0">
         <div class="row">
-            <div class="col-12">
-                <h1>Registrati:</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <div class="card-img-left d-none d-md-flex">
+                 <!-- Background image for card set in CSS! -->
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Registrati</h5>
                 <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
@@ -29,18 +30,20 @@
                         <label for="confirmationPass" class="form-label">Conferma Password:</label>
                         <input type="password" name="password_confirmation" class="form-control" id="confirmationPass">
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary">Registrati</button>
                   </form>
+                </div>
             </div>
+          </div>
         </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
+      </div>
+
+
+
+
+
+
+
+
     </x-layout>
