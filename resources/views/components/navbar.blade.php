@@ -16,7 +16,7 @@
               <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('ad.index')}}">I nostri annunci!</a>
+              <a class="nav-link anim1" href="{{route('ad.index')}}">I nostri annunci!</a>
             </li>
             @auth
             <li class="nav-item">
@@ -27,8 +27,8 @@
                 Benvenuto, {{Auth::user()->name}}!
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Profilo</a></li>
-                <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Esci</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Profilo</a></li>
+                <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();"><i class="fas fa-sign-out-alt"></i> Esci</a></li>
                 <form method="POST" action="{{route('logout')}}" style="display: none" id="form-logout">
                   @csrf
                 </form>
@@ -39,8 +39,8 @@
                   Benvenuto, Ospite!
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
-                  <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+                  <li><a class="dropdown-item" href="{{route('register')}}"><i class="fas fa-user-plus"></i> Registrati</a></li>
+                  <li><a class="dropdown-item" href="{{route('login')}}"><i class="fas fa-user-check"></i> Accedi</a></li>
                 </ul>
                 @endauth
             </li>

@@ -68,6 +68,15 @@ a{
     box-shadow: none;
 }
 
+.anim1 {
+  transition: all 0,5s !important;
+  
+}
+.anim1:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
 
 /* card category */
 .card-style {
@@ -147,7 +156,7 @@ Resources
 .card-signin .card-img-left2 {
     width: 45%;
     /* Link to your background image using in the property below! */
-    background: scroll center url('https://images.unsplash.com/photo-1529472119196-cb724127a98e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=621&q=80');
+    background: scroll center url('/img/cani-login.png');
     background-position: center;
     background-size: cover;
   }
