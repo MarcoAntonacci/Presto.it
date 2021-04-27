@@ -1,12 +1,5 @@
 <x-layout>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>{{$ad->title}}</h1>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+    <div class="container mt-5 pt-5">
         <div class="row">
             <div class="mb-3">
                 <div class="row g-0">
@@ -19,13 +12,13 @@
                         </div>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="/img/cat.jfif" class="d-block w-100" alt="...">
+                            <img src="/img/cat.jfif" class="d-block w-100 img-show" alt="{{$ad->name}}">
                           </div>
                           <div class="carousel-item">
-                            <img src="/img/cat1.jfif" class="d-block w-100" alt="...">
+                            <img src="/img/cat1.jfif" class="d-block w-100 img-show" alt="{{$ad->name}}">
                           </div>
                           <div class="carousel-item">
-                            <img src="/img/cat3.jfif" class="d-block w-100" alt="...">
+                            <img src="/img/cat3.jfif" class="d-block w-100 img-show" alt="{{$ad->name}}">
                           </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -39,19 +32,25 @@
                       </div>
                   </div>
                   <div class="col-md-4">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$ad->title}}</h5>
-                      <p class="card-text">{{$ad->price}}</p>
-                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text">{{$ad->category->name}}</p></a>
-                      <p class="card-text">{{$ad->created_at->format('d/m/Y')}}</p>
+                    <div class="card-body ms-5">
+                      <h5 class="card-title fs-2">{{$ad->title}}</h5>
+                      <p class="card-text tc-accent fs-3">€ {{$ad->price}}</p>
+                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
+                      <small class="card-text date-style"><i>{{$ad->created_at->format('d/m/Y')}}</i></small>
                       <hr>
-                      <p class="card-text">{{$ad->description}}</p>
-                      <a href="{{route('ad.index')}}" class="btn btn-primary">Torna Indietro</a>
+                      <p class="card-text text-justify">{{$ad->description}}</p>
                     </div>
                   </div>
                 </div>
               </div>
         </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <a href="{{route('ad.index')}}" class="btn btn-primary">Torna Indietro</a>
+        </div>
+      </div>
     </div>
 
 </x-layout>

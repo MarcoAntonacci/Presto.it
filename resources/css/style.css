@@ -29,6 +29,10 @@ a{
     color: var(--black-color);
 }
 
+.tc-white{
+    color: var(--white-color);
+}
+
 .bg-black {
     background-color: var(--black-color);
 }
@@ -36,6 +40,7 @@ a{
 .bg-accent {
     background-color: var(--accent-color);
 }
+
 
 /* navbar */
 .bg-nav {
@@ -45,6 +50,12 @@ a{
 .navbar-light .nav-link {
     color: var(--accent-color) !important;
 }
+
+.mini-logo{
+    width: 100px;
+    display: block!important;
+}
+
 
 /* card category */
 .card-style {
@@ -58,3 +69,19 @@ a{
 .card-style, a{
     color: var(--white-color);
 }
+
+.btn-primary {
+    background-color: var(--accent-color)!important;
+    border-color: transparent!important;
+}
+
+
+/* show annunci */
+.date-style{
+    color: lightslategrey;
+}
+
+
+/* carousel */
+
+
