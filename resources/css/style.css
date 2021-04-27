@@ -19,3 +19,33 @@ h1,h2,h3,h4,h5 {
 .tc-accent{
     color: var(--accent-color);
 }
+
+.tc-black {
+    color: var(--black-color);
+}
+
+.bg-black {
+    background-color: var(--black-color);
+}
+
+.bg-accent {
+    background-color: var(--accent-color);
+}
+
+/* navbar */
+.bg-nav {
+    background-color: #FEFEFE;
+}
+
+.navbar-light .nav-link {
+    color: var(--accent-color) !important;
+}
+
+/* card category */
+.card-style {
+    height: 200px;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    border-radius: 20px;
+}
