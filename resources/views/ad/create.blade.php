@@ -1,12 +1,14 @@
 <x-layout>
-<div class="container my-5">
-    <div class="row">
-        <div class="col-12">
-            <h1>Inserisci il tuo annuncio:</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-md-6">
+
+    <div class="container-fluid body-create">
+        <div class="row align-self-center">
+          <div class="col-lg-10 col-xl-9 m-auto">
+            <div class="card card-signin flex-row my-5 ">
+              <div class="card-img-left3 d-none d-md-flex">
+                 <!-- Background image for card set in CSS! -->
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Inserisci annuncio</h5>
             <form method="POST" action="{{route('ad.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
@@ -31,15 +33,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Inserisci Annuncio</button>
               </form>
+            </div>
         </div>
+      </div>
     </div>
 </div>
-
-
-
-
-
-
-
 
 </x-layout>

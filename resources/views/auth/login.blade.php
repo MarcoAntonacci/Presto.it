@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid body-register">
+    <div class="container-fluid body-login">
         <div class="row align-self-center height-login ">
           <div class="col-lg-10 col-xl-9 m-auto">
             <div class="card card-signin flex-row my-5 ">
