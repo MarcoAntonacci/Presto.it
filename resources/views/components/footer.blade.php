@@ -5,15 +5,15 @@
 
 {{-- SOCIAL --}}
       <section class="mb-4 d-flex justify-content-around tc-black">
-            <i class="fab fa-facebook-f"></i>
+            <i class="fab p-2 fa-facebook-f anim1"></i>
   
-            <i class="fab fa-twitter"></i>
+            <i class="fab p-2 fa-twitter anim1"></i>
   
-            <i class="fab fa-google"></i>
+            <i class="fab p-2 fa-google anim1"></i>
 
-            <i class="fab fa-instagram"></i>
+            <i class="fab p-2 fa-instagram anim1"></i>
   
-            <i class="fab fa-linkedin-in"></i>
+            <i class="fab p-2 fa-linkedin-in anim1"></i>
       </section>
   
 {{-- NEWSLETTER --}}

@@ -10829,6 +10829,7 @@ textarea.form-control-lg {
 }
 :root {
 --accent-color:#ff9500;
+--accent-light: #ffc77a;
 --black-color:#2b2b2b;
 --white-color: #FEFEFE;
 }
@@ -10898,11 +10899,81 @@ a{
 }
 
 .anim1 {
-  transition: all 0,5s !important;
+  transition: all 0.5s !important;
   
 }
 .anim1:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
+  transition: all 0.5s!important;
+}
+
+.dropdown-item{
+  transition: all 0.5s!important;
+}
+
+.dropdown-item:hover{
+  background-color: var(--accent-light)!important;
+  transition: all 0.5s!important;
+}
+
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: var(--black-color);
+  height: 3px;
+  transition-property: left, right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+
+/* MASTHEAD */
+.masthead{
+  background-image: url(/img/cart-image.jfif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead2{
+  background-image: url(/img/girl-phone.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mast-smoke{
+  background-color: var(--white-color);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.39);
+}
+
+.btn-outline-secondary{
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transition: all 0.5s;
+}
+
+.btn-outline-secondary:hover{
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--white-color);
   transition: all 0.5s;
 }
 
@@ -11096,6 +11167,9 @@ Resources
 .height-login{
     height: 600px;
 }
+
+
+/* CATEGORIES */
 
 
 

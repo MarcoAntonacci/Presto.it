@@ -13,14 +13,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
+              <a class="nav-link hvr-underline-from-center" aria-current="page" href="{{route('homepage')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link anim1" href="{{route('ad.index')}}">I nostri annunci!</a>
+              <a class="nav-link hvr-underline-from-center" href="{{route('ad.index')}}">I nostri annunci!</a>
             </li>
             @auth
             <li class="nav-item">
-              <a class="nav-link" href="{{route('ad.create')}}">Inserisci il tuo annuncio!</a>
+              <a class="nav-link hvr-underline-from-center" href="{{route('ad.create')}}">Inserisci il tuo annuncio!</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

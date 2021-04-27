@@ -12,7 +12,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <h2 class="mt-5 pt-5 text-center">I nostri annunci:</h2>
+        <h2 class="mt-5 text-center">I nostri annunci:</h2>
     </div>
         <div class="row mt-5">
             @foreach ($ads as $ad)
