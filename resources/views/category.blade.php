@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
       <div class="row">
-        <h2 class="mt-5 text-center">{{$categories}}</h2>
+        <h2 class="mt-5 text-center">{{$category}}</h2>
       </div>
         <div class="row">
           @if (count($ads)==0)

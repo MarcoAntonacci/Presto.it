@@ -18,10 +18,11 @@ class PublicController extends Controller
 
     public function category($cat){
 
-        $categories=Category::where('id', $cat)->get('name');
+        $category=Category::where('id', $cat)->pluck('name')->pop();
+        
         $ads=Ad::where('category_id', $cat)->get();
 
-        return view('category', compact('ads', 'categories'));
+        return view('category', compact('ads', 'category'));
     }
 }
 
