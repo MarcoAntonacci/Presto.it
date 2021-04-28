@@ -4,6 +4,14 @@
         <h2 class="mt-5 text-center">{{$categories}}</h2>
       </div>
         <div class="row">
+          @if (count($ads)==0)
+          <div class="text-center">
+              <h3>Ops... sembra che non ci siano ancora annunci in questa categoria...</h3>
+              <p>Vuoi essere il primo?</p>
+              <a class="btn btn-outline-secondary" href="{{route('ad.create')}}">Inserisci il tuo annuncio</a>
+              <div class="dummyHeight"></div>
+            </div>
+          @endif
             @foreach ($ads as $ad)
             <div class="col-12 col-md-4">
                 <div class="card">
