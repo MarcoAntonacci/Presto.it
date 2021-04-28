@@ -31,5 +31,5 @@ Route::get('/annunci/show/{ad}', [AdController::class, 'show'])->name('ad.show')
 //REVISORE
 
 Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
-Route::post('/revisor/ads/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
-Route::post('/revisor/ads/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
+Route::post('/revisor/ads/{id}/accept', [RevisorController::class, 'accepted'])->name('revisor.accept');
+Route::post('/revisor/ads/{id}/reject', [RevisorController::class, 'rejected'])->name('revisor.reject');
