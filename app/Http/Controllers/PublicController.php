@@ -11,15 +11,15 @@ class PublicController extends Controller
 {
     public function index () {
         $categories = Category::all();
-        $ads=Ad::orderBy('created_at', 'DESC')->take(5)->get();
-     
+        $ads=Ad::where('is_accepted', true)->orderBy('created_at', 'DESC')->take(5)->get();
+
         return view('index', compact('categories', 'ads'));
     }
 
     public function category($cat){
 
         $category=Category::where('id', $cat)->pluck('name')->pop();
-        
+
         $ads=Ad::where('category_id', $cat)->get();
 
         return view('category', compact('ads', 'category'));

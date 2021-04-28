@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,9 @@ Route::post('/annunci/store', [AdController::class, 'store'])->name('ad.store')-
 
 // DETTAGLIO ANNUNCI
 Route::get('/annunci/show/{ad}', [AdController::class, 'show'])->name('ad.show');
+
+//REVISORE
+
+Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+Route::post('/revisor/ads/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+Route::post('/revisor/ads/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');

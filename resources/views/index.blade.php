@@ -1,5 +1,8 @@
 <x-layout>
 
+    @if(session('Access.denied'))
+        <div class="alert alert-danger">Accesso non consentito</div>
+    @endif
 {{-- MASTHEAD --}}
 @guest
     <div class="masthead m-0">
@@ -67,7 +70,7 @@
                         </div>
                     </div>
             @endforeach
-            </div>  
+            </div>
         </div>
         </div>
     </div>

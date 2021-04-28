@@ -20,9 +20,9 @@ class RevisorMiddleware
         if(Auth::user() && Auth::user()->is_revisor){
 
             return $next($request);
-            
+
         }
 
-        return redirect(route('/'))->with('Access.denied', 'Access Denied');
+        return redirect('/')->with('Access.denied', 'Access Denied');
     }
 }
