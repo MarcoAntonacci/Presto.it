@@ -16,6 +16,12 @@ class PublicController extends Controller
         return view('index', compact('categories', 'ads'));
     }
 
+    public function search (Request $request) {
+        $q = $request->q;
+        $ads = Ad::search($q)->get();
+        return view('search_results', compact('q', 'ads'));
+    }
+
     public function category($cat){
 
         $category=Category::where('id', $cat)->pluck('name')->pop();

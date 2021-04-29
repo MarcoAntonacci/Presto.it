@@ -26,6 +26,17 @@
 </div>
 @endguest
 
+{{-- BARRA DI RICERCA --}}
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <form class="d-flex" method="GET" action="{{route('search')}}">
+                <input class="form-control me-2 rounded-pill" name="q" type="search" placeholder="Search" aria-label="Cerca">
+                <button class="btn btn-outline-success rounded-pill" type="submit">Cerca</button>
+              </form>
+        </div>
+    </div>
+</div>
 
 {{-- CATEGORIES --}}
     <div class="container mt-5">

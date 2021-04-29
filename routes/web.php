@@ -19,6 +19,7 @@ use App\Http\Controllers\RevisorController;
 // GENERALE
 Route::get('/', [PublicController::class, 'index'])->name('homepage');
 Route::get('/annunci/category/{cat}', [PublicController::class, 'category'])->name('category');
+Route::get('/search', [PublicController::class, 'search'])->name('search');
 
 // ANNUNCI
 Route::get('/annunci/index', [AdController::class, 'index'])->name('ad.index');
@@ -33,3 +34,5 @@ Route::get('/annunci/show/{ad}', [AdController::class, 'show'])->name('ad.show')
 Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
 Route::post('/revisor/ads/{id}/accept', [RevisorController::class, 'accepted'])->name('revisor.accept');
 Route::post('/revisor/ads/{id}/reject', [RevisorController::class, 'rejected'])->name('revisor.reject');
+
+
