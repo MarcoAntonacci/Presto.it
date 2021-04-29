@@ -53,9 +53,10 @@ a{
 }
 
 .mini-logo{
-    width: 100px;
+    width: 60px;
     display: block!important;
 }
+
 
 .shadow-nav{
     box-shadow: 0px 11px 9px -5px rgb(0 0 0 / 15%)!important;
@@ -71,7 +72,7 @@ a{
 
 .anim1 {
   transition: all 0.5s !important;
-  
+
 }
 .anim1:hover {
   transform: scale(1.5);
@@ -331,4 +332,12 @@ Resources
 /* CATEGORIES */
 .dummyHeight{
   height: 300px;
+}
+
+
+/* Footer */
+
+.mini-logo1{
+    width: 100px;
+
 }

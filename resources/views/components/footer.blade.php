@@ -5,61 +5,39 @@
 
 {{-- SOCIAL --}}
       <section class="mb-4 d-flex justify-content-around tc-black">
-            <i class="fab p-2 fa-facebook-f anim1"></i>
-  
-            <i class="fab p-2 fa-twitter anim1"></i>
-  
-            <i class="fab p-2 fa-google anim1"></i>
+            <i class="fab p-2 fa-facebook-f anim1 fs-3"></i>
 
-            <i class="fab p-2 fa-instagram anim1"></i>
-  
-            <i class="fab p-2 fa-linkedin-in anim1"></i>
-      </section>
-  
-{{-- NEWSLETTER --}}
-      <section class="">
-        <form action="" method="POST">
-          @csrf
-          <div class="row d-flex justify-content-center">
-            <div class="col-auto">
-              <p class="pt-2 tc-white">
-                <strong>Iscriviti alla nostra newsletter</strong>
-              </p>
-            </div>
-  
-            <div class="col-md-5 col-12">
-              <div class="form-outline form-white mb-4">
-                <input type="email" id="email" name="email" class="form-control" required="true"/>
-                <label class="form-label tc-black" for="email">Indirizzo Email</label>
-              </div>
-            </div>
-            <div class="col-auto">
-              <button type="submit" class="btn btn-outline-light mb-4 tc-white">
-                Iscriviti
-              </button>
-            </div>
-          </div>
-        </form>
-        @if(session('flash'))
-          <div class="alert alert-success">
-            {{session('flash')}}
-          </div>
-        @endif
-      </section>
-      
-  
-      {{-- TESTO GENERICO --}}
-      <section class="mb-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-          repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-          eum harum corrupti dicta, aliquam sequi voluptate quas.
-        </p>
-      </section>
+            <i class="fab p-2 fa-twitter anim1 fs-3"></i>
 
-      </div>
+            <i class="fab p-2 fa-google anim1 fs-3"></i>
+
+            <i class="fab p-2 fa-instagram anim1 fs-3"></i>
+
+            <i class="fab p-2 fa-linkedin-in anim1 fs-3"></i>
+      </section>
     </div>
-  </div>
+</div>
+
+      {{-- TESTO GENERICO --}}
+<div class="row justify-content-center align-items-center">
+       <div class="col-12 col-md-4">
+           <p>PRESTO.it S.p.A.</p>
+           <p>Via a caso , 70010, Bari (BA)</p>
+           <p>Partita Iva 1234567890</p>
+       </div>
+       <div class="col-12 col-md-4">
+            <img src="/img/presto-logo-white.png" alt="Presto logo" class="img-fluid mini-logo1">
+      </div>
+       <div class="col-12 col-md-4">
+            <p>Lavora con noi</p>
+            <p>Privacy Policy</p>
+            <p>Cookie Policy</p>
+      </div>
+
+</div>
+
+</div>
+
 
   <div class="container-fluid">
     <div class="row">
@@ -69,5 +47,5 @@
       </div>
     </div>
   </div>
-  
+
   </footer>
