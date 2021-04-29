@@ -21,13 +21,17 @@ class PublicController extends Controller
         $q = $request->q;
         $ads = Ad::search($q)->orderBy('created_at', 'DESC')->get();
 
-        foreach ($ads as $ad) {
-            $searchId=$ad->category_id;
+        if(count($ads) > 0){
+            foreach ($ads as $ad) {
+                $searchId=$ad->category_id;
+            }
+
+            $relations=Ad::where('category_id', $searchId)->orderBy('created_at', 'DESC')->get();
+
+            return view('search_results', compact('q', 'ads', 'relations'));
         }
 
-        $relations=Ad::where('category_id', $searchId)->orderBy('created_at', 'DESC')->get();
-
-        return view('search_results', compact('q', 'ads', 'relations'));
+        return view('search_results', compact('q', 'ads'));
     }
 
     public function category($cat){

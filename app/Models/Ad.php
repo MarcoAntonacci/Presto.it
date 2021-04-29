@@ -24,12 +24,12 @@ class Ad extends Model
 
     public function toSearchableArray()
     {
-        // $category=$this->category->pluck('name');
+        $category=$this->category;
         $array = [
             'id'=> $this->id,
             'title'=> $this->title,
             'description'=> $this->description,
-            // 'category'=>$category,
+            'category'=>$category,
         ];
         
 

@@ -33,4 +33,11 @@ class RevisorController extends Controller
     public function rejected($ad_id){
         return $this->setOk($ad_id, false);
     }
+
+    public function trash(){
+
+        $ad=Ad::where('is_accepted', false)->orderBy('created_at', 'DESC')->first();
+        
+        return view('revisor.trash', compact('ad'));
+    }
 }

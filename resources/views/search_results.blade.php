@@ -3,6 +3,16 @@
         <div class="row">
             <h2 class="mt-5 text-center">Risultati ricerca per: {{$q}}</h2>
         </div>
+        @if (count($ads) == 0)
+        <div class="row">
+          <div class="text-center">
+              <h3>Ops... sembra che non ci siano ancora annunci in questa categoria...</h3>
+              <p>Vuoi essere il primo?</p>
+              <a class="btn btn-outline-secondary" href="{{route('ad.create')}}">Inserisci il tuo annuncio</a>
+              <div class="dummyHeight"></div>
+            </div>
+        </div>
+        @else
             <div class="row mt-5">
                 @foreach ($ads as $ad)
                     @if ($ad->is_accepted == true)
@@ -53,6 +63,8 @@
                     @endif
                 @endforeach
                 </div>
+        @endif
 
     </div>
 </x-layout>
+

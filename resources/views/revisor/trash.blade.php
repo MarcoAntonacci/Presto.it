@@ -1,5 +1,4 @@
 <x-layout>
-
     @if ($ad)
 
 
@@ -52,22 +51,14 @@
     <div class="container mt-4">
       <div class="row justify-content-center">
         <div class="col-2">
-          <a href="{{route('revisor.trash')}}" class="btn btn-primary">Vai al cestino</a>
+          <a href="{{route('ad.index')}}" class="btn btn-primary">Torna Indietro</a>
         </div>
       </div>
     </div>
+    <form method="POST" action="{{route('revisor.accept', $ad->id)}}">
+        @csrf
+            <button type="submit" class="btn btn-success">Accetta</button>
+    </form>
 
-
-<form method="POST" action="{{route('revisor.accept', $ad->id)}}">
-    @csrf
-        <button type="submit" class="btn btn-success">Accetta</button>
-</form>
-
-<form method="POST" action="{{route('revisor.reject', $ad->id)}}">
-    @csrf
-        <button type="submit" class="btn btn-danger">Rifiuta</button>
-</form>
-@else
-<h3>Non ci sono annunci da revisionare</h3>
-@endif
+    @endif
 </x-layout>
