@@ -3,9 +3,8 @@
     <div class="container-fluid body-work">
         <div class="row align-self-center">
           <div class="col-lg-10 col-xl-9 m-auto">
-            <div class="card card-signin flex-row my-5 ">
+            <div class="card card-signin flex-row my-5 shadow">
               <div class="card-img-left4 d-none d-md-flex">
-                 <!-- Background image for card set in CSS! -->
               </div>
               <div class="card-body">
                 <h5 class="card-title text-center">Lavora con Noi</h5>

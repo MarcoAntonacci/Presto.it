@@ -2,9 +2,8 @@
     <div class="container-fluid body-register h-100 m-0">
         <div class="row">
           <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="card card-signin flex-row my-5">
+            <div class="card card-signin flex-row my-5 shadow">
               <div class="card-img-left d-none d-md-flex">
-                 <!-- Background image for card set in CSS! -->
               </div>
               <div class="card-body">
                 <h5 class="card-title text-center">Registrati</h5>

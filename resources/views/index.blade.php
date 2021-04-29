@@ -68,7 +68,7 @@
     {{-- ANNUNCI --}}
     <div class="container mb-5 pb-5">
         <div class="row">
-            <h3 class="text-center my-5 pt-5">Gli ultimi annunci inseriti:</h3>
+            <h3 class="text-center my-5 underline pt-5">Gli ultimi annunci inseriti:</h3>
             <div class="container">
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             @foreach ($ads as $ad)

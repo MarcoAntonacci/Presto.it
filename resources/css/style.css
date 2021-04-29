@@ -88,7 +88,6 @@ a{
   transition: all 0.5s!important;
 }
 
-
 .hvr-underline-from-center {
   display: inline-block;
   vertical-align: middle;
@@ -98,6 +97,7 @@ a{
   position: relative;
   overflow: hidden;
 }
+
 .hvr-underline-from-center:before {
   content: "";
   position: absolute;
@@ -114,10 +114,15 @@ a{
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
 }
+
+/* .underline{
+  
+} */
 
 
 /* MASTHEAD */
@@ -361,7 +366,6 @@ Resources
 }
 
 /* ADS */
-
 .shadow-ads{
     box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 15%)!important;
     transition: all 0.5s;
@@ -371,4 +375,32 @@ Resources
     transform: scale(1.05);
     box-shadow: 5px 5px 15px 5px  rgb(0 0 0 / 50%)!important;
     transition: all 0.5s;
+}
+
+
+/* GO UP BUTTON */
+#myBtn {
+  display: block;
+  background-color: var(--accent-light);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 50%;
+  right: 20px;
+  z-index: 1000;
+  outline:none;
+  border: none;
+  color: var(--white-color);
+  transition: all 0.5s;
+  opacity: 0.5;
+}
+
+#myBtn:hover {
+  cursor: pointer;
+  background-color: var(--black-color);
+  color: var(--accent-color);
+  transition: all 0.5s;
+  opacity: 1;
 }

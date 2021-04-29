@@ -3113,6 +3113,56 @@ function within(min, value, max) {
 
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
+__webpack_require__(/*! ./script */ "./resources/js/script.js");
+
+/***/ }),
+
+/***/ "./resources/js/script.js":
+/*!********************************!*\
+  !*** ./resources/js/script.js ***!
+  \********************************/
+/***/ (() => {
+
+// BACKGROUND COLOR
+if (window.location.href.indexOf('/lavora-con-noi') != -1) {
+  var body = document.body;
+  body.classList.add("body-work");
+}
+
+if (window.location.href.indexOf('/annunci/create') != -1) {
+  var _body = document.body;
+
+  _body.classList.add("body-create");
+}
+
+if (window.location.href.indexOf('/login') != -1) {
+  var _body2 = document.body;
+
+  _body2.classList.add("body-login");
+}
+
+if (window.location.href.indexOf('/register') != -1) {
+  var _body3 = document.body;
+
+  _body3.classList.add("body-register");
+} // ACTIVE BORDER BOTTOM
+// GO UP BUTTON
+
+
+mybutton = document.getElementById("myBtn");
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
 /***/ }),
 
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.esm.js":
