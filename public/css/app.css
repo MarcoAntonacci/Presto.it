@@ -11172,16 +11172,19 @@ Resources
 
 /* CATEGORIES */
 .dummyHeight{
-  height: 300px;
+  height: 200px;
 }
 
 
-/* Footer */
-
+/* FOOTER */
 .mini-logo1{
     width: 100px;
-
 }
 
+
+/* REVISOR */
+.img-revisor{
+  width: 500px;
+}
 
 

@@ -18,6 +18,7 @@ class PublicController extends Controller
 
     public function search (Request $request) {
 
+        $lastFives=Ad::where('is_accepted', true)->orderBy('created_at', 'DESC')->take(5)->get();
         $q = $request->q;
         $ads = Ad::search($q)->orderBy('created_at', 'DESC')->get();
 
@@ -25,13 +26,11 @@ class PublicController extends Controller
             foreach ($ads as $ad) {
                 $searchId=$ad->category_id;
             }
-
             $relations=Ad::where('category_id', $searchId)->orderBy('created_at', 'DESC')->get();
-
             return view('search_results', compact('q', 'ads', 'relations'));
         }
 
-        return view('search_results', compact('q', 'ads'));
+        return view('search_results', compact('q', 'ads', 'lastFives'));
     }
 
     public function category($cat){

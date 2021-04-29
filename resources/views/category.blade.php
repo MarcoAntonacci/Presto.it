@@ -7,9 +7,9 @@
           @if (count($ads)==0)
           <div class="text-center">
               <h3>Ops... sembra che non ci siano ancora annunci in questa categoria...</h3>
+              <img class="img-revisor" src="/img/ops.png" alt="Niente annunci">
               <p>Vuoi essere il primo?</p>
               <a class="btn btn-outline-secondary" href="{{route('ad.create')}}">Inserisci il tuo annuncio</a>
-              <div class="dummyHeight"></div>
             </div>
           @endif
             @foreach ($ads as $ad)

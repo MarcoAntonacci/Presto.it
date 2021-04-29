@@ -5,11 +5,33 @@
         </div>
         @if (count($ads) == 0)
         <div class="row">
-          <div class="text-center">
-              <h3>Ops... sembra che non ci siano ancora annunci in questa categoria...</h3>
-              <p>Vuoi essere il primo?</p>
-              <a class="btn btn-outline-secondary" href="{{route('ad.create')}}">Inserisci il tuo annuncio</a>
-              <div class="dummyHeight"></div>
+            <div class="text-center">
+              <h3>Ops... non abbiamo trovato nulla</h3>
+              <img class='img-revisor' src="/img/ops.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <h3></h3>
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                @foreach ($lastFives as $lastFive)
+                    @if ($lastFive->is_accepted == true)
+                            <div class="col-12 col-md-4">
+                                <div class="card shadow">
+                                    <img src="/img/default.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$lastFive->title}}</h5>
+                                        <p class="card-text tc-accent">{{$lastFive->price}} €</p>
+                                        <a href="{{route('category', ['cat'=>$lastFive->category->id])}}"><p class="card-text tc-black">{{$lastFive->category->name}}</p></a>
+                                        <hr>
+                                        <p class="card-text">{{$lastFive->description}}</p>
+                                            <div class="text-center">
+                                                <a href="{{route('lastFive', compact('lastFive'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         @else

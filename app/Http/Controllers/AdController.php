@@ -60,6 +60,12 @@ class AdController extends Controller
         return view('ad.show', compact('ad', 'categories'));
     }
 
+    public function lastFive(Ad $ad)
+    {
+        $categories=Category::all();
+        return view('lastFive', compact('ad', 'categories'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
