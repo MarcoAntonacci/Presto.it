@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Category;
+use App\Mail\ContactMail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -41,7 +43,24 @@ class PublicController extends Controller
 
         return view('category', compact('ads', 'category'));
     }
-}
+
+
+    public function lavoraConNoi() {
+        return view('lavora-con-noi');
+    }
+
+    public function submit (Request $request) {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $message = $request->input('message');
+        $contact = compact ('name', 'email', 'message');
+
+        Mail::to($email)->send(new ContactMail($contact));
+
+        return redirect(route('homepage'))->with('message', 'La tua richiesta è stata inoltrata!');
+    } 
+
+} 
 
 
 // $truncated = Str::limit('description', 20);

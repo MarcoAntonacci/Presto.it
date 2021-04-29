@@ -20,6 +20,8 @@ use App\Http\Controllers\RevisorController;
 Route::get('/', [PublicController::class, 'index'])->name('homepage');
 Route::get('/annunci/category/{cat}', [PublicController::class, 'category'])->name('category');
 Route::get('/search', [PublicController::class, 'search'])->name('search');
+Route::get('/lavora-con-noi', [PublicController::class, 'lavoraConNoi'])->name('lavora-con-noi');
+Route::post('/lavora-con-noi/submit', [PublicController::class, 'submit'])->name('lavora.submit');
 
 // ANNUNCI
 Route::get('/annunci/index', [AdController::class, 'index'])->name('ad.index');

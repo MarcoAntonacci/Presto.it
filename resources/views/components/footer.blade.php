@@ -29,7 +29,7 @@
             <img src="/img/presto-logo-white.png" alt="Presto logo" class="img-fluid mini-logo1">
       </div>
        <div class="col-12 col-md-4">
-            <p>Lavora con noi</p>
+            <p><a href="{{route('lavora-con-noi')}}">Lavora con Noi</a></p>
             <p>Privacy Policy</p>
             <p>Cookie Policy</p>
       </div>

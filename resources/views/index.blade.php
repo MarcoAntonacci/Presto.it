@@ -3,7 +3,14 @@
     @if(session('Access.denied'))
         <div class="alert alert-danger">Accesso non consentito</div>
     @endif
+
+    @if(session('message'))
+        <div class="alert alert-success text-center">La tua richiesta è stata inoltrata con successo</div>
+    @endif
+
+
 {{-- MASTHEAD --}}
+
 @guest
     <div class="masthead m-0">
         <div class="position-relative overflow-hidden p-3 p-md-5 text-center my-0">

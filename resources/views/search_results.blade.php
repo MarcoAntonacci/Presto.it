@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="row">
-            <h3></h3>
+            <h3>Dai un'occhiata a questi:</h3>
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                 @foreach ($lastFives as $lastFive)
                     @if ($lastFive->is_accepted == true)
