@@ -209,6 +209,11 @@ Resources
     background: linear-gradient(to right,#089299, #0cc6cf);
   }
 
+  .body-work {
+    background: #ba1f0a;
+    background: linear-gradient(to right,#801406, #e62c13);
+  }
+
 .card-signin {
   border: 0;
   border-radius: 1rem;
@@ -241,6 +246,15 @@ Resources
     width: 45%;
     /* Link to your background image using in the property below! */
     background: scroll center url('https://images.unsplash.com/photo-1521657172978-eec332b0548e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');
+    background-position: center;
+    background-size: cover;
+  }
+
+
+.card-signin .card-img-left4 {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('/img/work.jfif');
     background-position: center;
     background-size: cover;
   }
@@ -344,4 +358,17 @@ Resources
 /* REVISOR */
 .img-revisor{
   width: 500px;
+}
+
+/* ADS */
+
+.shadow-ads{
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 15%)!important;
+    transition: all 0.5s;
+}
+
+.shadow-ads:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px 5px  rgb(0 0 0 / 50%)!important;
+    transition: all 0.5s;
 }

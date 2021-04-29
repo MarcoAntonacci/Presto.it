@@ -58,9 +58,9 @@ class PublicController extends Controller
         Mail::to($email)->send(new ContactMail($contact));
 
         return redirect(route('homepage'))->with('message', 'La tua richiesta è stata inoltrata!');
-    } 
+    }
 
-} 
+}
 
 
 // $truncated = Str::limit('description', 20);

@@ -16,14 +16,14 @@
                 @foreach ($lastFives as $lastFive)
                     @if ($lastFive->is_accepted == true)
                             <div class="col-12 col-md-4">
-                                <div class="card shadow">
+                                <div class="card shadow-ads">
                                     <img src="/img/default.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$lastFive->title}}</h5>
                                         <p class="card-text tc-accent">{{$lastFive->price}} €</p>
                                         <a href="{{route('category', ['cat'=>$lastFive->category->id])}}"><p class="card-text tc-black">{{$lastFive->category->name}}</p></a>
                                         <hr>
-                                        <p class="card-text">{{$lastFive->description}}</p>
+                                        <p class="card-text text-truncate">{{$lastFive->description}}</p>
                                             <div class="text-center">
                                                 <a href="{{route('lastFive', compact('lastFive'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
                                             </div>
@@ -39,14 +39,14 @@
                 @foreach ($ads as $ad)
                     @if ($ad->is_accepted == true)
                             <div class="col-12 col-md-4 mb-3">
-                                <div class="card shadow">
+                                <div class="card shadow-ads">
                                     <img src="/img/default.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$ad->title}}</h5>
                                         <p class="card-text tc-accent">{{$ad->price}} €</p>
                                         <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
                                         <hr>
-                                        <p class="card-text">{{$ad->description}}</p>
+                                        <p class="card-text text-truncate">{{$ad->description}}</p>
                                             <div class="text-center">
                                                 <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
                                             </div>
@@ -65,14 +65,14 @@
                         @foreach ($ads as $ad )
                             @if ($ad->id !== $relation->id)
                                 <div class="col-12 col-md-4">
-                                    <div class="card shadow">
+                                    <div class="card shadow-ads">
                                         <img src="/img/default.jpg" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title">{{$relation->title}}</h5>
                                             <p class="card-text tc-accent">{{$relation->price}} €</p>
                                             <a href="{{route('category', ['cat'=>$relation->category->id])}}"><p class="card-text tc-black">{{$relation->category->name}}</p></a>
                                             <hr>
-                                            <p class="card-text">{{$relation->description}}</p>
+                                            <p class="card-text text-truncate">{{$relation->description}}</p>
                                                 <div class="text-center">
                                                     <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
                                                 </div>

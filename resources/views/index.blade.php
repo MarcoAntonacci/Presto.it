@@ -38,8 +38,8 @@
     <div class="row">
         <div class="col-12 col-md-6 offset-md-3">
             <form class="d-flex" method="GET" action="{{route('search')}}">
-                <input class="form-control me-2 rounded-pill" name="q" type="search" placeholder="Search" aria-label="Cerca">
-                <button class="btn btn-outline-success rounded-pill" type="submit">Cerca</button>
+                <input class="form-control me-2 rounded-pill" name="q" type="search" placeholder="Cosa stai cercando?" aria-label="Cerca">
+                <button class="btn btn-primary rounded-pill" type="submit"><i class="fas fa-search"><span> Cerca</span></i></button>
               </form>
         </div>
     </div>
@@ -51,7 +51,7 @@
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             @foreach ($categories as $category)
             <div class="col-12 col-sm-6 col-md-3 mx-auto">
-                <div class="card card-style">
+                <div class="card card-style shadow-ads">
                     <div class="card-body d-flex align-items-center justify-content-center">
                       <h5 class="card-title"><i class="fas fa-shopping-cart"></i> {{$category->name}}</h5>
                     </div>
@@ -74,14 +74,14 @@
             @foreach ($ads as $ad)
                 @if ($ad->is_accepted == true)
                         <div class="col-12 col-md-4">
-                            <div class="card shadow">
+                            <div class="card shadow-ads">
                                 <img src="/img/default.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <p class="card-text tc-accent">{{$ad->price}} €</p>
                                     <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
                                     <hr>
-                                    <p class="card-text">{{$ad->description}}</p>
+                                    <p class="card-text text-truncate">{{$ad->description}}</p>
                                         <div class="text-center">
                                             <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
                                         </div>
