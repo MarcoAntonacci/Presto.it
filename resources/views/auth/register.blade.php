@@ -31,6 +31,9 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Registrati</button>
+                    <p class="mt-2">
+                      Sei già iscritto? <a class="tc-accent" href="{{'login'}}">Accedi</a>
+                    </p>
                   </form>
                 </div>
             </div>

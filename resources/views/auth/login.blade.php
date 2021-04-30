@@ -19,6 +19,9 @@
                           <input type="password" name="password" class="form-control" id="userPass">
                         </div>
                         <button type="submit" class="btn btn-primary">Accedi</button>
+                        <p class="mt-2">
+                          Non sei ancora iscritto? <a class="tc-accent" href="{{'register'}}">Registrati</a>
+                        </p>
                   </form>
                 </div>
             </div>
