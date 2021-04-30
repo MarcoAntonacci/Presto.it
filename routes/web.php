@@ -29,6 +29,9 @@ Route::get('/annunci/create', [AdController::class, 'create'])->name('ad.create'
 Route::post('/annunci/store', [AdController::class, 'store'])->name('ad.store')->middleware('auth');
 Route::get('/annunci/show/{ad}', [AdController::class, 'show'])->name('ad.show');
 Route::get('/annunci/show/{lastFive}', [AdController::class, 'lastFive'])->name('lastFive');
+Route::get('/annunci/images', [AdController::class, 'getImages'])->name('ad.getImages');
+Route::post('/annunci/images/upload', [AdController::class, 'upload'])->name('ad.upload');
+Route::delete('/annunci/images/remove', [AdController::class, 'remove'])->name('ad.remove');
 
 //REVISORE
 Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');

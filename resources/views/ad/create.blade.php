@@ -11,6 +11,8 @@
                 <h5 class="card-title text-center">Inserisci annuncio</h5>
             <form method="POST" action="{{route('ad.store')}}" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+                
                 <div class="mb-3">
                   <label for="adTitle" class="form-label">Titolo annuncio:</label>
                   <input type="text" name="title" class="form-control" id="adTitle">
@@ -20,13 +22,20 @@
                   <input type="text" name="price" class="form-control" id="adPrice">
                 </div>
                 <div class="mb-3">
-                    <label for="adCategory" class="form-label">Category:</label>
+                    <label for="adCategory" class="form-label">Categoria:</label>
                     <select name="category">
                         @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
                   </div>
+                <div class="mb-3">
+                  <label for="adImages" class="form-label">Immagini:</label>
+                  <div class="dropzone" id="drophere"></div>
+                  @error('images')
+                    <span class="invalid-feedback" role="alert"><strong>{{$message}}</strong></span>
+                  @enderror
+                </div>
                 <div class="mb-3">
                     <label for="adPrice" class="form-label">Descrizione annuncio:</label>
                     <textarea name="description" id="adDescription" class="form-control" cols="30" rows="10"></textarea>

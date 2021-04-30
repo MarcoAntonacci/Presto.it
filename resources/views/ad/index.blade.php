@@ -19,7 +19,11 @@
                 @if ($ad->is_accepted == true)
                         <div class="col-12 col-md-4 mb-3">
                             <div class="card shadow-ads">
-                                <img src="/img/default.jpg" class="card-img-top" alt="...">
+
+                                @foreach ($ad->adImages as $image)
+                                <img src="{{Storage::url($image->file)}}" class="card-img-top" alt="...">
+                                @endforeach
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <p class="card-text tc-accent">{{$ad->price}} €</p>
