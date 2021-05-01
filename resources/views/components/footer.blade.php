@@ -42,10 +42,27 @@
   <div class="container-fluid">
     <div class="row">
         {{-- COPYRIGHT --}}
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 SEO & Webmaster: <span class="tc-black"> Team C.O.D.A.</span>
+      <div class="text-center p-3 d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 SEO & Webmaster: <span class="tc-black ms-3"> Team C.O.D.A.</span>
+        <span>
+          @include('components.locale', ['lang'=>'it', 'nation'=>'it'])
+        </span>
+        <span>
+          @include('components.locale', ['lang'=>'en', 'nation'=>'gb'])
+        </span>
+        <span>
+          @include('components.locale', ['lang'=>'es', 'nation'=>'es'])
+        </span>
       </div>
     </div>
   </div>
 
   </footer>
+
+
+  {{-- <form method="POST" action="{{route('locale', 'it')}}">
+    @csrf
+    <button type="submit" >
+      <span class="flag-icon flag-icon-it ms-3"></span>
+    </button>
+  </form> --}}

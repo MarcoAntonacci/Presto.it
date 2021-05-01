@@ -60,6 +60,12 @@ class PublicController extends Controller
         return redirect(route('homepage'))->with('message', 'La tua richiesta è stata inoltrata!');
     }
 
+
+    public function locale ($locale) {
+        session()->put('locale', $locale);
+        return redirect()->back();
+    }
+
 }
 
 
