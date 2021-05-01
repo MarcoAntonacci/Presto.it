@@ -15,7 +15,7 @@
     <div class="masthead m-0">
         <div class="position-relative overflow-hidden p-3 p-md-5 text-center my-0">
             <div class="col-md-5 p-lg-5 me-auto my-5 mast-smoke">
-            <h1 class="display-4 tc-accent font-weight-normal">E' arrivato il momento di fare affari!</h1>
+            <h1 class="display-4 tc-accent font-weight-normal">{{ __('ui.masthead1') }}</h1>
             <p class="lead font-weight-normal tc-black"></p>
             <a class="btn btn-outline-secondary" href="{{route('register')}}">Inizia Presto</a>
             </div>
@@ -25,7 +25,7 @@
 <div class="masthead2 m-0">
     <div class="position-relative overflow-hidden p-3 p-md-5 my-0 text-center">
         <div class="col-md-5 p-lg-5 me-auto my-5 mast-smoke">
-        <h1 class="display-4 tc-black font-weight-normal">Cosa vuoi vendere?</h1>
+        <h1 class="display-4 tc-black font-weight-normal">{{ __('ui.masthead2') }}</h1>
         <p class="lead font-weight-normal tc-black"></p>
         <a class="btn btn-outline-secondary" href="{{route('ad.create')}}">Inserisci il tuo annuncio</a>
         </div>

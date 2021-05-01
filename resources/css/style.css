@@ -404,3 +404,9 @@ Resources
   transition: all 0.5s;
   opacity: 1;
 }
+
+/* bottoni lingue */
+.btn-lingue {
+  background-color: transparent;
+  border: none;
+}

@@ -11246,6 +11246,11 @@ Resources
   opacity: 1;
 }
 
+/* bottoni lingue */
+.btn-lingue {
+  background-color: transparent;
+  border: none;
+}
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }
@@ -11594,4 +11599,5 @@ Resources
   border-right: 6px solid transparent;
   border-bottom: 6px solid #be2626;
 }
+
 
