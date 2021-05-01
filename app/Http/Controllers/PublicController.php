@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Mail\ContactMail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class PublicController extends Controller
     public function index () {
         $categories = Category::all();
         $ads=Ad::where('is_accepted', true)->orderBy('created_at', 'DESC')->take(5)->get();
+        
 
         return view('index', compact('categories', 'ads'));
     }

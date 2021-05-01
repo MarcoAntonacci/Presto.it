@@ -14,8 +14,10 @@
           @endif
             @foreach ($ads as $ad)
             <div class="col-12 col-md-4">
-                <div class="card">
-                    <img src="/img/default.jpg" class="card-img-top" alt="{{$ad->description}}">
+                <div class="card shadow-ads">
+                    @foreach ($ad->adImages as $image)
+                      <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
+                    @endforeach
                     <div class="card-body">
                       <h5 class="card-title">{{$ad->title}}</h5>
                       <p class="card-text">{{$ad->price}}</p>

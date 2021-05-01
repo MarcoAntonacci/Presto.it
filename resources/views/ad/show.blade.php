@@ -10,16 +10,18 @@
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner">     
                           <div class="carousel-item active">
-                            <img src="/img/cat.jfif" class="d-block w-100 img-show" alt="{{$ad->name}}">
+                                @foreach ($ad->adImages as $image)
+                                    <img src="{{$image->getUrl(864, 576)}}" class="card-img-top" alt="...">
+                                @endforeach
                           </div>
-                          <div class="carousel-item">
+                          {{-- <div class="carousel-item">
                             <img src="/img/cat1.jfif" class="d-block w-100 img-show" alt="{{$ad->name}}">
                           </div>
                           <div class="carousel-item">
                             <img src="/img/cat3.jfif" class="d-block w-100 img-show" alt="{{$ad->name}}">
-                          </div>
+                          </div> --}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

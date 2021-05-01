@@ -21,7 +21,7 @@
                             <div class="card shadow-ads">
 
                                 @foreach ($ad->adImages as $image)
-                                <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
+                                    <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
                                 @endforeach
 
                                 <div class="card-body">

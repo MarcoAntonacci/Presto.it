@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ad;
 use App\Models\AdImage;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -62,10 +63,26 @@ class AdController extends Controller
             $fileName=basename($image);
             $newFileName="public/ads/{$ad->id}/{$fileName}";
             Storage::move($image, $newFileName);
-            dispatch(new ResizeImage(
+
+            // IMMAGINI IN ANNUNCI INDEX
+            dispatch(new ResizeImage( 
                 $newFileName,
                 414,
                 276
+            ));
+
+            // IMMAGINI IN HOMEPAGE
+            dispatch(new ResizeImage(
+                $newFileName,
+                245,
+                163
+            ));
+
+            // IMMAGINI IN ANNUNCI SHOW
+            dispatch(new ResizeImage(
+                $newFileName,
+                864,
+                576
             ));
 
             $i->file=$newFileName;
@@ -136,8 +153,8 @@ class AdController extends Controller
 
         dispatch(new ResizeImage(
             $fileName,
-            80,
-            80
+            120,
+            120
         ));
 
         session()->push("images.{$uniqueSecret}", $fileName);
@@ -160,13 +177,14 @@ class AdController extends Controller
     public function getImages(Request $request){
         $uniqueSecret=$request->uniqueSecret;
         $images=session()->get("images.{$uniqueSecret}", []);
+        $removedImages=session()->get("removedimages.{$uniqueSecret}", []);
         $images=array_diff($images, $removedImages);
         $data=[];
 
         foreach ($images as $image) {
             $data[] = [
                 'id'=>$image,
-                'src'=>AdImage::getUrlByFilePath($image, 80, 80)
+                'src'=>AdImage::getUrlByFilePath($image, 120, 120)
             ];
         }
         return response()->json($data);
