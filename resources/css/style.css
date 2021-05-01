@@ -410,3 +410,8 @@ Resources
   background-color: transparent;
   border: none;
 }
+
+
+.display-none{
+  display: none;
+}

@@ -76,8 +76,10 @@
                         <div class="col-12 col-md-4">
                             <div class="card shadow-ads">
 
-                                @foreach ($ad->adImages as $image)
+                                @foreach ($ad->adImages as $key => $image)
+                                <span class="carousel-item {{$key == 0 ? 'active' : '' }}">
                                     <img src="{{$image->getUrl(245, 163)}}" class="card-img-top" alt="...">
+                                </span>
                                 @endforeach
                                 
                                 <div class="card-body">

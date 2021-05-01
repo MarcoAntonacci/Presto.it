@@ -22,9 +22,23 @@ class PublicController extends Controller
 
     public function search (Request $request) {
 
+        $tests=Category::all();
         $lastFives=Ad::where('is_accepted', true)->orderBy('created_at', 'DESC')->take(5)->get();
         $q = $request->q;
         $ads = Ad::search($q)->orderBy('created_at', 'DESC')->get();
+
+        foreach ($tests as $test) {
+            if ($q == $test->name) {
+                foreach ($ads as $ad) {
+                    $cat = $ad->category->id;
+                }
+                return redirect(route('category', $cat));
+            } else
+            foreach ($ads as $ad) {
+                $cat = $ad->category->id;
+            }
+            return redirect(route('category', $cat));
+        }
 
         if(count($ads) > 0){
             foreach ($ads as $ad) {

@@ -3,6 +3,7 @@
         <div class="row">
             <h2 class="mt-5 text-center">Risultati ricerca per: {{$q}}</h2>
         </div>
+     
         @if (count($ads) == 0)
         <div class="row">
             <div class="text-center">
@@ -19,8 +20,10 @@
                     @if ($lastFive->is_accepted == true)
                             <div class="col-12 col-md-4">
                                 <div class="card shadow-ads">
-                                    @foreach ($ad->adImages as $image)
-                                        <img src="{{$image->getUrl(245, 163)}}" class="card-img-top" alt="...">
+                                    @foreach ($lastFive->adImages as $key => $image)
+                                        <span class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                            <img src="{{$image->getUrl(245, 163)}}" class="card-img-top" alt="...">
+                                        </span>
                                     @endforeach
                                     <div class="card-body">
                                         <h5 class="card-title">{{$lastFive->title}}</h5>
@@ -44,8 +47,10 @@
                     @if ($ad->is_accepted == true)
                             <div class="col-12 col-md-4 mb-3">
                                 <div class="card shadow-ads">
-                                    @foreach ($ad->adImages as $image)
+                                    @foreach ($ad->adImages as $key => $image)
+                                    <span class="carousel-item {{$key == 0 ? 'active' : '' }}">
                                         <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
+                                    </span>
                                     @endforeach
                                     <div class="card-body">
                                         <h5 class="card-title">{{$ad->title}}</h5>
@@ -72,8 +77,10 @@
                             @if ($ad->id !== $relation->id)
                                 <div class="col-12 col-md-4">
                                     <div class="card shadow-ads">
-                                        @foreach ($ad->adImages as $image)
-                                            <img src="{{$image->getUrl(245, 163)}}" class="card-img-top" alt="...">
+                                        @foreach ($ad->adImages as $key => $image)
+                                            <span class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                                                <img src="{{$image->getUrl(245, 163)}}" class="card-img-top" alt="...">
+                                            </span>
                                         @endforeach
                                             <div class="card-body">
                                                 <h5 class="card-title">{{$relation->title}}</h5>

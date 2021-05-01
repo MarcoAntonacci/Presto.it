@@ -15,13 +15,15 @@
             @foreach ($ads as $ad)
             <div class="col-12 col-md-4">
                 <div class="card shadow-ads">
-                    @foreach ($ad->adImages as $image)
-                      <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
-                    @endforeach
+                  @foreach ($ad->adImages as $key => $image)
+                      <span class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                          <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
+                      </span>
+                  @endforeach
                     <div class="card-body">
                       <h5 class="card-title">{{$ad->title}}</h5>
-                      <p class="card-text">{{$ad->price}}</p>
-                      <p class="card-text">{{$ad->description}}</p>
+                      <p class="card-text tc-accent">{{$ad->price}}</p>
+                      <p class="card-text text-truncate">{{$ad->description}}</p>
                       <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
                     </div>
                   </div>
