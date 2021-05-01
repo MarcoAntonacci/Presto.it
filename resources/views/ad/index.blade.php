@@ -21,9 +21,9 @@
                             <div class="card shadow-ads">
 
                                 @foreach ($ad->adImages as $image)
-                                <img src="{{Storage::url($image->file)}}" class="card-img-top" alt="...">
+                                <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
                                 @endforeach
-                                
+
                                 <div class="card-body">
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <p class="card-text tc-accent">{{$ad->price}} €</p>

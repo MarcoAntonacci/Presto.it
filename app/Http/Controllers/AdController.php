@@ -62,13 +62,19 @@ class AdController extends Controller
             $fileName=basename($image);
             $newFileName="public/ads/{$ad->id}/{$fileName}";
             Storage::move($image, $newFileName);
+            dispatch(new ResizeImage(
+                $newFileName,
+                414,
+                276
+            ));
+
             $i->file=$newFileName;
             $i->ad_id=$ad->id;
             $i->save();
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
- 
+
         return redirect(route('ad.index'))->with('flash', 'Ottimo! Il tuo annuncio è in fase di revisione!');
     }
 
@@ -127,6 +133,13 @@ class AdController extends Controller
     public function upload(Request $request){
         $uniqueSecret=$request->input('uniqueSecret');
         $fileName=$request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        dispatch(new ResizeImage(
+            $fileName,
+            80,
+            80
+        ));
+
         session()->push("images.{$uniqueSecret}", $fileName);
 
         return response()->json(
@@ -153,7 +166,7 @@ class AdController extends Controller
         foreach ($images as $image) {
             $data[] = [
                 'id'=>$image,
-                'src'=>Storage::url($image)
+                'src'=>AdImage::getUrlByFilePath($image, 80, 80)
             ];
         }
         return response()->json($data);
