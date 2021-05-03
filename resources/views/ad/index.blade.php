@@ -1,5 +1,4 @@
 <x-layout>
-    <x-searchbar></x-searchbar>
 <div class="container-fluid">
     <div class="row justify-content-center text-center">
         <div class="col-12 col-md-6">
