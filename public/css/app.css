@@ -10946,7 +10946,7 @@ a{
 }
 
 /* .underline{
-  
+
 } */
 
 
@@ -11253,13 +11253,59 @@ Resources
 }
 
 
-.display-none{
+/* MINI SEARCHBAR */
+ 
+#myBtn2 {
+  display: block;
+  background-color: var(--accent-light);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 50%;
+  left: 20px;
+  z-index: 1000;
+  outline:none;
+  border: none;
+  color: var(--white-color);
+  transition: all 0.5s;
+}
+
+#myBtn2:hover {
+  cursor: pointer;
+  background-color: var(--black-color);
+  color: var(--accent-color);
+  transition: all 0.5s;
+}
+
+ #miniBtn{
+  display: block;
+  order: 1;
+  position: fixed;
+  bottom: 51%;
+  left: 284px;
+  z-index: 1000;
+}
+
+
+#miniSearch{
+  display: block;
+  order:2;
+  position: fixed;
+  bottom: 51%;
+  left: 75px;
+  z-index: 900;
+  width: 250px;
+}
+
+.hide{
   display: none;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 6a6ceb252aed75a7dfb2400fc48ff0331928f175
+.unclear{
+  opacity: 0.5!important;
+}
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }
