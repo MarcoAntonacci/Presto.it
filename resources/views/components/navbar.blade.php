@@ -29,11 +29,11 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
             @if(Auth::user()->is_revisor)
-                <li><a class="dropdown-item" href="{{route('revisor.index')}}"><i class="fas fa-user-secret"></i> {{ __('ui.zona rev') }}</a></li>
-                <li class="dropdown-item">{{\App\Models\Ad::ToBeRevisionedCount()}}</li>
+                <li><a class="dropdown-item" href="{{route('revisor.index')}}"><i class="fas fa-user-secret tc-accent"></i> {{ __('ui.zona rev') }}</a></li>
+                <li class="dropdown-item"><i class="fas fa-pause-circle tc-accent"></i> In sospeso: <span style=“color: green”>{{\App\Models\Ad::ToBeRevisionedCount()}}</span></li>
             @endif
-                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> {{ __('ui.profilo') }}</a></li>
-                <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('ui.esci') }}</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle tc-accent"></i> {{ __('ui.profilo') }}</a></li>
+                <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();"><i class="fas fa-sign-out-alt tc-accent"></i> {{ __('ui.esci') }}</a></li>
                 <form method="POST" action="{{route('logout')}}" style="display: none" id="form-logout">
                   @csrf
                 </form>

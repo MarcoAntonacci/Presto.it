@@ -50,20 +50,23 @@
         <h3 class="text-center my-5">{{ __('ui.nostre categorie') }}</h3>
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             @foreach ($categories as $category)
-            <div class="col-12 col-sm-6 col-md-3 mx-auto">
-                <div class="card card-style shadow-ads">
-                    <div class="card-body d-flex align-items-center justify-content-center">
-                      <h5 class="card-title"><i class="fas fa-shopping-cart"></i> {{$category->name}}</h5>
-                    </div>
-                    <div class="mb-3">
-                        <a href="{{route('category', ['cat'=>$category->id])}}" class="btn btn-outline-light">{{ __('ui.esplora') }}</a>
+            <div class="col-12 col-sm-6 col-md-3 mx-auto m-3">
+                    <div class="border-0 card-style shadow-ads" style="background-image: url({{$category->img}}); background-size:cover; background-position:center;">
+                        <div class="overlay">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <h5 class="card-title"><i class="{{$category->icon}} me-2"></i>{{$category->name}}</h5>
+                              </div>
+                              <div class="mb-3">
+                                  <a href="{{route('category', ['cat'=>$category->id])}}" class="btn btn-outline-light">{{ __('ui.esplora') }}</a>
+                              </div>
+                        </div>
                     </div>
             </div>
             @endforeach
         </div>
     </div>
 
-
+    
     {{-- ANNUNCI --}}
     <div class="container mb-5 pb-5">
         <div class="row">

@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\ImgSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\IconSeeder;
 use Illuminate\Support\Facades\DB;
+use Database\Seeders\CategorySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,13 +16,10 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        $categories=['Veicoli', 'Abbigliamento', 'Articoli per la casa', 'Articoli sportivi', 'Elettronica', 'Giocattoli e videogiochi', 'Immobili','Giardino ed esterni', 'Articoli per animali','Hobby'];
-        foreach ($categories as $category) {
-            DB::table('categories')->insert([
-                'name'=>$category,
-
-            ]);
-        }
+    {   
+        $this->call([
+            CategorySeeder::class && IconSeeder::class && ImgSeeder::class,
+        ]);
+        
     }
 }
