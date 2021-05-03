@@ -58,7 +58,6 @@
                     <div class="mb-3">
                         <a href="{{route('category', ['cat'=>$category->id])}}" class="btn btn-outline-light">{{ __('ui.esplora') }}</a>
                     </div>
-                </div>
             </div>
             @endforeach
         </div>

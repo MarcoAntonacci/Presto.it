@@ -1,3 +1,5 @@
+const { xor } = require("lodash");
+
 // BACKGROUND COLOR
 if (window.location.href.indexOf('/lavora-con-noi') != -1) {
     let body=document.body;
@@ -37,3 +39,10 @@ function scrollFunction() {
 }
 
 
+// MINI SEARCHBAR
+myBtn2=document.querySelector("#myBtn2");
+searchContainer=document.querySelector("#searchContainer");
+myBtn2.addEventListener('click', () => {
+  searchContainer.classList.toggle('hide')
+  myBtn2.classList.toggle('unclear')
+})
