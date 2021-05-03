@@ -1,19 +1,19 @@
 <x-layout>
      <div class="container">
         <div class="row">
-            <h2 class="mt-5 text-center">Risultati ricerca per: {{$q}}</h2>
+            <h2 class="mt-5 text-center">{{ __('ui.ris ricerca') }} {{$q}}</h2>
         </div>
      
         @if (count($ads) == 0)
         <div class="row">
             <div class="text-center">
-              <h3>Ops... non abbiamo trovato nulla</h3>
+              <h3>{{ __('ui.trovato nulla') }}</h3>
               <img class='img-revisor' src="/img/ops.png" alt="">
             </div>
         </div>
         <div class="row">
             <div class="text-center">
-                <h3>Dai un'occhiata a questi:</h3>
+                <h3>{{ __('ui.dai occhiata') }}</h3>
             </div>
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
                 @foreach ($lastFives as $lastFive)
@@ -32,7 +32,7 @@
                                         <hr>
                                         <p class="card-text text-truncate">{{$lastFive->description}}</p>
                                             <div class="text-center">
-                                                <a href="{{route('lastFive', compact('lastFive'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
+                                                <a href="{{route('lastFive', compact('lastFive'))}}" class="btn btn-primary">{{ __('ui.dettaglio annuncio') }}</a>
                                             </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                         <hr>
                                         <p class="card-text text-truncate">{{$ad->description}}</p>
                                             <div class="text-center">
-                                                <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
+                                                <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">{{ __('ui.dettaglio annuncio') }}</a>
                                             </div>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                                 <hr>
                                                 <p class="card-text text-truncate">{{$relation->description}}</p>
                                                     <div class="text-center">
-                                                        <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
+                                                        <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">{{ __('ui.dettaglio annuncio') }}</a>
                                                     </div>
                                             </div>
                                     </div>

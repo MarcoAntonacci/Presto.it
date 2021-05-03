@@ -15,11 +15,11 @@
               <div class="card-img-left4 d-none d-md-flex">
               </div>
               <div class="card-body">
-                <h5 class="card-title text-center">Lavora con Noi</h5>
+                <h5 class="card-title text-center">{{ __('ui.lavora con noi') }}</h5>
             <form method="POST" action="{{route('lavora.submit')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                  <label for="adTitle" class="form-label">Nome:</label>
+                  <label for="adTitle" class="form-label">{{ __('ui.nome') }}:</label>
                   <input type="text" name="name" class="form-control" id="adTitle">
                 </div>
                 <div class="mb-3">
@@ -27,10 +27,10 @@
                   <input name="email" type="email" class="form-control" id="adPrice">
                 </div>
                 <div class="mb-3">
-                    <label for="adPrice" class="form-label">Messaggio:</label>
+                    <label for="adPrice" class="form-label">{{ __('ui.msg') }}:</label>
                     <textarea name="message" id="adDescription" class="form-control" cols="30" rows="10"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Invia</button>
+                <button type="submit" class="btn btn-primary">{{ __('ui.invia') }}</button>
               </form>
             </div>
         </div>

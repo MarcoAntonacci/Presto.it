@@ -15,20 +15,20 @@
               <div class="card-img-left2 d-none d-md-flex">
               </div>
               <div class="card-body">
-                <h5 class="card-title text-center">Accedi</h5>
+                <h5 class="card-title text-center">{{ __('ui.accedi') }}</h5>
                 <form method="POST" action="{{route('login')}}" enctype="multipart/form-data">
                     @csrf
                         <div class="mb-3">
-                          <label for="userMail" class="form-label">Indirizzo Mail:</label>
+                          <label for="userMail" class="form-label">{{ __('ui.ins email') }}</label>
                           <input type="email" name="email" class="form-control" id="userMail">
                         </div>
                         <div class="mb-3">
-                          <label for="userPass" class="form-label">Password:</label>
+                          <label for="userPass" class="form-label">{{ __('ui.ins pw') }}</label>
                           <input type="password" name="password" class="form-control" id="userPass">
                         </div>
-                        <button type="submit" class="btn btn-primary">Accedi</button>
+                        <button type="submit" class="btn btn-primary">{{ __('ui.accedi') }}</button>
                         <p class="mt-2">
-                          Non sei ancora iscritto? <a class="tc-accent" href="{{'register'}}">Registrati</a>
+                          {{ __('ui.non ancora iscritto') }} <a class="tc-accent" href="{{'register'}}">{{ __('ui.registrati') }}</a>
                         </p>
                   </form>
                 </div>

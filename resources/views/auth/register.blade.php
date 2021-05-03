@@ -15,29 +15,29 @@
               <div class="card-img-left d-none d-md-flex">
               </div>
               <div class="card-body">
-                <h5 class="card-title text-center">Registrati</h5>
+                <h5 class="card-title text-center">{{ __('ui.registrati') }}</h5>
                 <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                      <label for="userName" class="form-label">Inserisci Username:</label>
+                      <label for="userName" class="form-label">{{ __('ui.ins user') }}</label>
                       <input type="text" name="name" class="form-control" id="userName">
                     </div>
                     <div class="mb-3">
-                      <label for="userMail" class="form-label">Inserisci Email:</label>
+                      <label for="userMail" class="form-label">{{ __('ui.ins email') }}</label>
                       <input type="email" name="email" class="form-control" id="userMail">
                     </div>
                     <div class="mb-3">
-                        <label for="userPass" class="form-label">Inserisci Password:</label>
+                        <label for="userPass" class="form-label">{{ __('ui.ins pw') }}</label>
                         <input type="password" name="password" class="form-control" id="userPass">
                     </div>
                     <div class="mb-3">
-                        <label for="confirmationPass" class="form-label">Conferma Password:</label>
+                        <label for="confirmationPass" class="form-label">{{ __('ui.conf pw') }}</label>
                         <input type="password" name="password_confirmation" class="form-control" id="confirmationPass">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Registrati</button>
+                    <button type="submit" class="btn btn-primary">{{ __('ui.registrati') }}</button>
                     <p class="mt-2">
-                      Sei già iscritto? <a class="tc-accent" href="{{'login'}}">Accedi</a>
+                      {{ __('ui.gia iscritto') }} <a class="tc-accent" href="{{'login'}}">{{ __('ui.accedi') }}</a>
                     </p>
                   </form>
                 </div>

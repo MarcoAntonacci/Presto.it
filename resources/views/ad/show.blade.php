@@ -46,7 +46,7 @@
     <div class="container mt-4">
       <div class="row justify-content-center">
         <div class="col-2">
-          <a href="{{route('ad.index')}}" class="btn btn-primary">Torna Indietro</a>
+          <a href="{{route('ad.index')}}" class="btn btn-primary">{{ __('ui.indietro') }}</a>
         </div>
       </div>
     </div>

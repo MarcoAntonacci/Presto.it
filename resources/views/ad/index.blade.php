@@ -12,7 +12,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <h2 class="mt-5 text-center">I nostri annunci:</h2>
+        <h2 class="mt-5 text-center">{{ __('ui.i nostri annunci') }}</h2>
     </div>
         <div class="row mt-5">
             @foreach ($ads as $ad)
@@ -33,7 +33,7 @@
                                     <hr>
                                     <p class="card-text text-truncate">{{$ad->description}}</p>
                                         <div class="text-center">
-                                            <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">Dettaglio dell'annuncio</a>
+                                            <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">{{ __('ui.dettaglio annuncio') }}</a>
                                         </div>
                                 </div>
                             </div>

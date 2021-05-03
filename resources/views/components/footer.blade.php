@@ -23,13 +23,13 @@
        <div class="col-12 col-md-4">
            <p>PRESTO.it S.p.A.</p>
            <p>Via a caso , 70010, Bari (BA)</p>
-           <p>Partita Iva 1234567890</p>
+           <p>Partita Iva/VAT 1234567890</p>
        </div>
        <div class="col-12 col-md-4">
             <img src="/img/presto-logo-white.png" alt="Presto logo" class="img-fluid mini-logo1">
       </div>
        <div class="col-12 col-md-4">
-            <p><a href="{{route('lavora-con-noi')}}">Lavora con Noi</a></p>
+            <p><a href="{{route('lavora-con-noi')}}">{{ __('ui.lavora con noi') }}</a></p>
             <p>Privacy Policy</p>
             <p>Cookie Policy</p>
       </div>

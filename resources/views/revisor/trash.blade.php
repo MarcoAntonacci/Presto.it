@@ -8,7 +8,7 @@
 
                 {{--Tasto Reject  --}}
                 <div class="col-3">
-                  <a href="{{route('revisor.index')}}" class="btn btn-primary">Torna alla Zona Revisori</a>
+                  <a href="{{route('revisor.index')}}" class="btn btn-primary">{{ __('ui.torna indietro') }}</a>
                 </div>
                 
                 {{-- Carousel --}}
@@ -55,7 +55,7 @@
                 <div class="col-md-3">
                   <form method="POST" action="{{route('revisor.accept', $ad->id)}}">
                     @csrf
-                        <button type="submit" class="btn btn-success">Accetta</button>
+                        <button type="submit" class="btn btn-success">{{ __('ui.accetta') }}</button>
                   </form>
                 </div>
               </div>

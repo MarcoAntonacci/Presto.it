@@ -4,7 +4,7 @@
 
     <div class="container mt-5">
         <div class="row text-center">
-          <h3 class="mb-5">Hai ancora <span class="tc-accent fs-1"> {{\App\Models\Ad::ToBeRevisionedCount()}}</span> annuncio/i da revisionare!</h3>
+          <h3 class="mb-5">{{ __('ui.hai ancora') }} <span class="tc-accent fs-1"> {{\App\Models\Ad::ToBeRevisionedCount()}}</span> {{ __('ui.annunci da revisionare') }}</h3>
             <div class="mb-3">
                 <div class="row align-items-center justify-content-center">
 
@@ -12,7 +12,7 @@
                   <div class="col-1">
                     <form method="POST" action="{{route('revisor.reject', $ad->id)}}">
                       @csrf
-                          <button type="submit" class="btn btn-danger">Rifiuta</button>
+                          <button type="submit" class="btn btn-danger">{{ __('ui.rifiuta') }}</button>
                     </form>
                   </div>
                   
@@ -58,7 +58,7 @@
                   <div class="col-md-1">
                     <form method="POST" action="{{route('revisor.accept', $ad->id)}}">
                       @csrf
-                          <button type="submit" class="btn btn-success">Accetta</button>
+                          <button type="submit" class="btn btn-success">{{ __('ui.accetta') }}</button>
                     </form>
                   </div>
                 </div>
@@ -70,7 +70,7 @@
         </div>
         <div class="row justify-content-center mt-4">
           <div class="text-center">
-            <a href="{{route('revisor.trash')}}" class="btn btn-primary">Vai al cestino</a>
+            <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
           </div>
         </div>
       </div>
@@ -80,10 +80,10 @@
 
 @else
 <div class="text-center mt-5">
-  <h3>Non ci sono annunci da revisionare</h3>
+  <h3>{{ __('ui.niente da revisionare') }}</h3>
   <img class="img-revisor mb-3" src="/img/Emptye.png" alt="Niente da fare">
   <div class="col-2 mx-auto">
-    <a href="{{route('revisor.trash')}}" class="btn btn-primary">Vai al cestino</a>
+    <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
   </div>
 </div>
 

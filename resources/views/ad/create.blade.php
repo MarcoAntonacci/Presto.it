@@ -8,21 +8,21 @@
                  <!-- Background image for card set in CSS! -->
               </div>
               <div class="card-body">
-                <h5 class="card-title text-center">Inserisci annuncio</h5>
+                <h5 class="card-title text-center">{{ __('ui.inserisci annuncio') }}</h5>
             <form method="POST" action="{{route('ad.store')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                 
                 <div class="mb-3">
-                  <label for="adTitle" class="form-label">Titolo annuncio:</label>
+                  <label for="adTitle" class="form-label">{{ __('ui.titolo annuncio') }}</label>
                   <input type="text" name="title" class="form-control" id="adTitle">
                 </div>
                 <div class="mb-3">
-                  <label for="adPrice" class="form-label">Prezzo:</label>
+                  <label for="adPrice" class="form-label">{{ __('ui.prezzo') }}</label>
                   <input type="text" name="price" class="form-control" id="adPrice">
                 </div>
                 <div class="mb-3">
-                    <label for="adCategory" class="form-label">Categoria:</label>
+                    <label for="adCategory" class="form-label">{{ __('ui.categoria') }}</label>
                     <select name="category">
                         @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
@@ -30,17 +30,17 @@
                     </select>
                   </div>
                 <div class="mb-3">
-                  <label for="adImages" class="form-label">Immagini:</label>
+                  <label for="adImages" class="form-label">{{ __('ui.immagini') }}</label>
                   <div class="dropzone" id="drophere"></div>
                   @error('images')
                     <span class="invalid-feedback" role="alert"><strong>{{$message}}</strong></span>
                   @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="adPrice" class="form-label">Descrizione annuncio:</label>
+                    <label for="adPrice" class="form-label">{{ __('ui.descrizione annuncio') }}</label>
                     <textarea name="description" id="adDescription" class="form-control" cols="30" rows="10"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Inserisci Annuncio</button>
+                <button type="submit" class="btn btn-primary">{{ __('ui.inserisci annuncio') }}</button>
               </form>
             </div>
         </div>
