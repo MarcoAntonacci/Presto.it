@@ -14,7 +14,7 @@
                           
                           @foreach ($ad->adImages as $key => $image)
                             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                              <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
+                              <img src="{{$image->getUrl(864, 576)}}" class="img-fluid" alt="...">
                             </div>
                           @endforeach
                           
