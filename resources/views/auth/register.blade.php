@@ -27,10 +27,6 @@
                       <input type="email" name="email" class="form-control" id="userMail">
                     </div>
                     <div class="mb-3">
-                        <label for="confirmationMail" class="form-label">Conferma Email:</label>
-                        <input type="email" name="model" class="form-control" id="confirmationMail">
-                    </div>
-                    <div class="mb-3">
                         <label for="userPass" class="form-label">Inserisci Password:</label>
                         <input type="password" name="password" class="form-control" id="userPass">
                     </div>

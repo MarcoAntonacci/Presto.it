@@ -30,9 +30,7 @@ class PublicController extends Controller
         foreach ($tests as $test) {
             if ($q == $test->name) {
                 if (count($ads) > 0){
-                    foreach ($ads as $ad) {
-                        $cat = $ad->category->id;
-                    }
+                    $cat = $test->id;
                     return redirect(route('category', $cat));
                 } else
                 $cat = $test->id;
