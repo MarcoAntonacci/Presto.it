@@ -1,4 +1,5 @@
 <x-layout>
+  <x-searchbar></x-searchbar>
     <div class="container">
       <div class="row">
         <h2 class="mt-5 text-center">{{$category}}</h2>

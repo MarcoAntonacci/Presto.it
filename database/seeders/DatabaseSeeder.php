@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $categories=['veicoli', 'abbigliamento', 'articoli per la casa', 'articoli sportivi', 'elettronica', 'giocattoli e videogiochi', 'immobili','giardino ed esterni', 'articoli per animali','hobby'];
+        $categories=['Veicoli', 'Abbigliamento', 'Articoli per la casa', 'Articoli sportivi', 'Elettronica', 'Giocattoli e videogiochi', 'Immobili','Giardino ed esterni', 'Articoli per animali','Hobby'];
         foreach ($categories as $category) {
             DB::table('categories')->insert([
                 'name'=>$category,
