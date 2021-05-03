@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 :root {
 --accent-color:#ff9500;
 --accent-light: #ffc77a;
@@ -161,11 +165,17 @@ a{
 
 /* card category */
 .card-style {
-    height: 150px;
+    height: 160px;
     text-align: center;
     text-decoration: none;
-    background-color: var(--accent-color);
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+.overlay{
+  height: 160px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.404);
+  overflow: hidden;
 }
 
 .card-style, a{

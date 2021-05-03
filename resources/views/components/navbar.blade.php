@@ -29,11 +29,11 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
             @if(Auth::user()->is_revisor)
-                <li><a class="dropdown-item" href="{{route('revisor.index')}}"><i class="fas fa-user-secret"></i> Zona Revisore</a></li>
-                <li class="dropdown-item">{{\App\Models\Ad::ToBeRevisionedCount()}}</li>
+                <li><a class="dropdown-item" href="{{route('revisor.index')}}"><i class="fas fa-user-secret tc-accent me-1"></i> Zona Revisore</a></li>
+                <li class="dropdown-item"><i class="fas fa-pause-circle tc-accent"></i> In sospeso: <span style="color: green">{{\App\Models\Ad::ToBeRevisionedCount()}}</span></li>
             @endif
-                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Profilo</a></li>
-                <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();"><i class="fas fa-sign-out-alt"></i> Esci</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle tc-accent me-2"></i>Profilo</a></li>
+                <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();"><i class="fas fa-sign-out-alt tc-accent me-2"></i>Esci</a></li>
                 <form method="POST" action="{{route('logout')}}" style="display: none" id="form-logout">
                   @csrf
                 </form>
