@@ -27,18 +27,16 @@ class PublicController extends Controller
         $q = $request->q;
         $ads = Ad::search($q)->orderBy('created_at', 'DESC')->get();
 
-        // foreach ($tests as $test) {
-        //     if ($q == $test->name) {
-        //         foreach ($ads as $ad) {
-        //             $cat = $ad->category->id;
-        //         }
-        //         return redirect(route('category', $cat));
-        //     } else
-        //     foreach ($ads as $ad) {
-        //         $cat = $ad->category->id;
-        //     }
-        //     return redirect(route('category', $cat));
-        // }
+        foreach ($tests as $test) {
+            if ($q == $test->name) {
+                if (count($ads) > 0){
+                    $cat = $test->id;
+                    return redirect(route('category', $cat));
+                } else
+                $cat = $test->id;
+                return redirect(route('category', $cat));
+            }
+        }
 
         if(count($ads) > 0){
             foreach ($ads as $ad) {
