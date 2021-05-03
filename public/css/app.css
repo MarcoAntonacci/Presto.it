@@ -10946,7 +10946,7 @@ a{
 }
 
 /* .underline{
-
+  
 } */
 
 
@@ -11251,6 +11251,11 @@ Resources
   background-color: transparent;
   border: none;
 }
+
+
+.display-none{
+  display: none;
+}
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }
@@ -11549,7 +11554,7 @@ Resources
   width: 80px;
   margin-left: -40px;
   background: rgba(255, 255, 255, 0.9);
-  /* -webkit-transform: scale(1); */
+  -webkit-transform: scale(1);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -13167,7 +13172,6 @@ Resources
 .flag-icon-xk.flag-icon-squared {
   background-image: url(/images/vendor/flag-icon-css/flags/1x1/xk.svg?48269c0b55c2532ccb7608a0fc28a5c2);
 }
-
 
 
 
