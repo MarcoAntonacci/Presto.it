@@ -21,10 +21,10 @@
 <body>
 
     <x-navbar></x-navbar>
-    <x-searchbar></x-searchbar>
+    
     {{$slot}}
 
-
+    <x-searchbar></x-searchbar>
     <a href="#"><button id="myBtn" title="goUp"><i class="fas fs-2 fa-chevron-up"></i></button></a>
     <x-footer/>
     <script src="{{asset('js/app.js')}}"></script>
