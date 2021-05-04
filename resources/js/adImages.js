@@ -49,9 +49,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
         });
 
+
         myDropzone.on("success", function(file, response){
 
             file.serverId = response.id;
+            console.log('Immagine Upload con successo');
 
         });
 

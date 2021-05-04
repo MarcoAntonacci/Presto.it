@@ -174,7 +174,7 @@ class AdController extends Controller
          $fileName=$request->input('id');
          session()->push("removedimages.{$uniqueSecret}", $fileName);
          Storage::delete($fileName);
-         return response()->json('ok ho cancellato l\'immagine');
+         return response()->json('Tutto bene, eseguito, ho cancellato l\'immagine');
     }
 
     // GET
