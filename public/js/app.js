@@ -3143,6 +3143,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     myDropzone.on("success", function (file, response) {
       file.serverId = response.id;
+      console.log('Prova con coach');
     });
     myDropzone.on("removedfile", function (file) {
       $.ajax({
