@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Jobs\ResizeImage;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -43,7 +44,7 @@ class AdController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdRequest $request)
     {
         $ad=Ad::create([
             'title'=>$request->title,

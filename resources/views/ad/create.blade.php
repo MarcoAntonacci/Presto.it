@@ -1,15 +1,13 @@
 <x-layout>
-  <div class="container">
-    @if ($errors->any())
-        <div class="alert alert-danger my-5">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
+  @if ($errors->any())
+    <div class="alert alert-danger my-5">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
 
     <div class="container-fluid body-create">
         <div class="row align-self-center">
