@@ -8,8 +8,11 @@ use App\Models\Category;
 use App\Jobs\ResizeImage;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdRequest;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 class AdController extends Controller
 {
@@ -43,7 +46,7 @@ class AdController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdRequest $request)
     {
         $ad=Ad::create([
             'title'=>$request->title,
@@ -65,7 +68,7 @@ class AdController extends Controller
             Storage::move($image, $newFileName);
 
             // IMMAGINI IN ANNUNCI INDEX
-            dispatch(new ResizeImage( 
+            dispatch(new ResizeImage(
                 $newFileName,
                 414,
                 276
@@ -85,9 +88,13 @@ class AdController extends Controller
                 576
             ));
 
+
             $i->file=$newFileName;
             $i->ad_id=$ad->id;
             $i->save();
+
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
@@ -147,8 +154,9 @@ class AdController extends Controller
         //
     }
 
+    // POST
     public function upload(Request $request){
-        $uniqueSecret=$request->input('uniqueSecret');
+        $uniqueSecret = $request->input('uniqueSecret');
         $fileName=$request->file('file')->store("public/temp/{$uniqueSecret}");
 
         dispatch(new ResizeImage(
@@ -156,6 +164,8 @@ class AdController extends Controller
             120,
             120
         ));
+
+
 
         session()->push("images.{$uniqueSecret}", $fileName);
 
@@ -166,27 +176,30 @@ class AdController extends Controller
         );
     }
 
+    // DELETE
     public function remove(Request $request){
          $uniqueSecret=$request->input('uniqueSecret');
          $fileName=$request->input('id');
          session()->push("removedimages.{$uniqueSecret}", $fileName);
          Storage::delete($fileName);
-         return response()->json('ok');
+         return response()->json('Tutto bene, eseguito, ho cancellato l\'immagine');
     }
 
+    // GET
     public function getImages(Request $request){
-        $uniqueSecret=$request->uniqueSecret;
-        $images=session()->get("images.{$uniqueSecret}", []);
-        $removedImages=session()->get("removedimages.{$uniqueSecret}", []);
-        $images=array_diff($images, $removedImages);
-        $data=[];
+        $uniqueSecret = $request->uniqueSecret;
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+        $images = array_diff($images, $removedImages);
 
+        $data = [];
         foreach ($images as $image) {
             $data[] = [
-                'id'=>$image,
-                'src'=>AdImage::getUrlByFilePath($image, 120, 120)
+                'id' => $image,
+                'src' => AdImage::getUrlByFilePath($image, 120, 120)
             ];
         }
+
         return response()->json($data);
     }
 }

@@ -67,8 +67,8 @@ return [
     'vuoi essere il primo' => '¿Quieres ser el primero?',
 
      // pag. lavora con noi
-     'nome' => 'Name',
-     'msg' => 'Message',
+     'nome' => 'Nombre',
+     'msg' => 'Mensaje',
      'invia' => 'Enviar',
 
      // pag. risultati ricerca vuota

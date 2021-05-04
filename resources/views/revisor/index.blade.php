@@ -8,82 +8,86 @@
             <div class="mb-3">
                 <div class="row align-items-center justify-content-center">
 
-                  {{--Tasto Reject  --}}
-                  <div class="col-1">
-                    <form method="POST" action="{{route('revisor.reject', $ad->id)}}">
-                      @csrf
-                          <button type="submit" class="btn btn-danger">{{ __('ui.rifiuta') }}</button>
-                    </form>
-                  </div>
-                  
-                    {{-- Carousel --}}
-                    <div class="col-12 col-md-5">
-                      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                          </div>
-                          <div class="carousel-inner">
-
-                            @foreach ($ad->adImages as $key => $image)
-                              <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                                <img src="{{$image->getUrl(414, 276)}}" class="card-img-top" alt="...">
-                              </div>
-                            @endforeach
-
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
+                  {{-- Dati --}}
+                  <div class="col-12">
+                    <div class="card-body">
+                      <h5 class="card-title fs-2">{{$ad->title}}</h5>
+                      <p class="card-text tc-accent fs-3">€ {{$ad->price}}</p>
+                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
+                      <small class="card-text date-style"><i>{{$ad->created_at->format('d/m/Y')}}</i></small>
                     </div>
+                  </div>
 
-                    {{-- Dati --}}
-                    <div class="col-12 col-md-3">
-                      <div class="card-body">
-                        <h5 class="card-title fs-2">{{$ad->title}}</h5>
-                        <p class="card-text tc-accent fs-3">€ {{$ad->price}}</p>
-                        <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
-                        <small class="card-text date-style"><i>{{$ad->created_at->format('d/m/Y')}}</i></small>
+                  {{-- Descrizione --}}
+                  <div class="row justify-content-center m-3">
+                    <div class="col-11 col-md-6 card">
+                      <p class="card-text text-justify">{{$ad->description}}</p>
+                    </div>
+                  </div>
+
+                {{-- Carousel --}}
+                <div class="col-12 col-md-5">
+
+                @foreach ($ad->adImages as $image)
+                  <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-8">
+                        <img src="{{$image->getUrl(245, 163)}}" class="img-fluid" alt="...">
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-body">
+                          <p class="card-text">
+                              <ul>
+                             <li>Adult: {{$image->adult}}</li>
+                             <li> Spoof: {{$image->spoof}}</li>
+                             <li>Medical: {{$image->medical}}</li>
+                             <li>Violence: {{$image->violence}}</li>
+                             <li> Racy: {{$image->racy}}</li>
+                            </ul>
+                            <b>Labels</b>
+                            <ul>
+                                @if ($image->labels)
+                                    @foreach ($image->labels as $label)
+                                        <li>{{$label}}</li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </p>
+
+                        </div>
                       </div>
                     </div>
-
-                  {{-- Tasto Accept --}}
-                  <div class="col-md-1">
-                    <form method="POST" action="{{route('revisor.accept', $ad->id)}}">
-                      @csrf
-                          <button type="submit" class="btn btn-success">{{ __('ui.accetta') }}</button>
-                    </form>
                   </div>
+                  @endforeach
+
                 </div>
-              </div>
-      </div>
-      {{-- Descrizione --}}
-      <div class="row justify-content-center">
-        <div class="col-11 col-md-6 card">
-          <p class="card-text text-justify">{{$ad->description}}</p>
-        </div>
+
       </div>
 
       {{-- Tasti --}}
+      <div class="container">
         <div class="row justify-content-center mt-4">
-          <div class="text-center">
-            <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
+          <div class="col-12 col-md-2 text-center m-2">
+            <form method="POST" action="{{route('revisor.reject', $ad->id)}}">
+              @csrf
+                  <button type="submit" class="btn btn-danger">{{ __('ui.rifiuta') }}</button>
+            </form>
           </div>
-          {{-- <div class="col-12 col-md-2">
+          <div class="col-12 col-md-2">
+            <div class="text-center m-2">
+              <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-2 text-center m-2">
             <form method="POST" action="{{route('revisor.accept', $ad->id)}}">
-                @csrf
-                    <button type="submit" class="btn btn-success mb-3">Accetta</button>
-              </form>
-          </div> --}}
+              @csrf
+                  <button type="submit" class="btn btn-success mb-3">Accetta</button>
+            </form>
+          </div>
 
         </div>
+      </div>
+
 
     </div>
 
