@@ -3113,8 +3113,12 @@ function within(min, value, max) {
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelectorAll('#drophere').length > 0) {
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
-    var uniqueSecret = $('input[name="uniqueSecret"]').attr('value');
+    var getAttribute = function getAttribute(selector, attributeName) {
+      return document.querySelectorAll(selector)[0].getAttribute(attributeName);
+    };
+
+    var csrfToken = getAttribute('meta[name="csrf-token"]', 'content');
+    var uniqueSecret = getAttribute('input[name="uniqueSecret"]', 'value');
     var myDropzone = new window.Dropzone('#drophere', {
       url: '/annunci/images/upload',
       params: {
@@ -3123,21 +3127,25 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       addRemoveLinks: true,
       init: function init() {
-        $.ajax({
-          type: 'GET',
-          url: '/annunci/images',
-          data: {
-            uniqueSecret: uniqueSecret
-          },
-          dataType: 'json'
-        }).done(function (data) {
-          $.each(data, function (key, value) {
+        fetch("/annunci/images? uniqueSecret=".concat(uniqueSecret), {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(function (response) {
+          console.log('risposta ricevuta: ', response);
+          return response.json();
+        }).then(function (data) {
+          console.log('Success:', data);
+          data.forEach(function (value) {
             var file = {
               serverId: value.id
             };
             myDropzone.options.addedfile.call(myDropzone, file);
             myDropzone.options.thumbnail.call(myDropzone, file, value.src);
           });
+        })["catch"](function (error) {
+          console.error('Error:', error);
         });
       }
     });
@@ -3145,20 +3153,26 @@ document.addEventListener('DOMContentLoaded', function () {
       file.serverId = response.id;
     });
     myDropzone.on("removedfile", function (file) {
-      $.ajax({
-        type: 'DELETE',
-        url: '/annunci/images/remove',
-        data: {
-          _token: csrfToken,
-          id: file.serverId,
-          uniqueSecret: uniqueSecret
+      var data = {
+        _token: csrfToken,
+        id: file.serverId,
+        uniqueSecret: uniqueSecret
+      };
+      fetch('/annunci/images/remove', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
         },
-        dataType: 'json'
+        body: JSON.stringify(data)
+      }).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        console.log('Cancellazione OK', data);
+      })["catch"](function (error) {
+        console.error('Cancellazione Error:', error);
       });
     });
   }
-
-  ;
 });
 
 /***/ }),

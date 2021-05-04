@@ -148,8 +148,9 @@ class AdController extends Controller
         //
     }
 
+    // POST
     public function upload(Request $request){
-        $uniqueSecret=$request->input('uniqueSecret');
+        $uniqueSecret = $request->input('uniqueSecret');
         $fileName=$request->file('file')->store("public/temp/{$uniqueSecret}");
 
         dispatch(new ResizeImage(
@@ -167,27 +168,30 @@ class AdController extends Controller
         );
     }
 
+    // DELETE
     public function remove(Request $request){
          $uniqueSecret=$request->input('uniqueSecret');
          $fileName=$request->input('id');
          session()->push("removedimages.{$uniqueSecret}", $fileName);
          Storage::delete($fileName);
-         return response()->json('ok');
+         return response()->json('ok ho cancellato l\'immagine');
     }
 
+    // GET
     public function getImages(Request $request){
-        $uniqueSecret=$request->uniqueSecret;
-        $images=session()->get("images.{$uniqueSecret}", []);
-        $removedImages=session()->get("removedimages.{$uniqueSecret}", []);
-        $images=array_diff($images, $removedImages);
-        $data=[];
-
+        $uniqueSecret = $request->uniqueSecret;
+        $images = session()->get("images.{$uniqueSecret}", []);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+        $images = array_diff($images, $removedImages);
+        
+        $data = [];
         foreach ($images as $image) {
             $data[] = [
-                'id'=>$image,
-                'src'=>AdImage::getUrlByFilePath($image, 120, 120)
+                'id' => $image,
+                'src' => AdImage::getUrlByFilePath($image, 120, 120)
             ];
         }
+
         return response()->json($data);
     }
 }
