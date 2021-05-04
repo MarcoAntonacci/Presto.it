@@ -72,7 +72,7 @@
       </div>
 
       {{-- Tasti --}}
-        <div class="row justify-content-center mt-4">
+        {{-- <div class="row justify-content-center mt-4">
           <div class="text-center">
             <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
           </div>
@@ -83,7 +83,7 @@
               </form>
           </div>
 
-        </div>
+        </div> --}}
 
     </div>
 

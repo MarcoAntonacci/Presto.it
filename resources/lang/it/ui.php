@@ -52,7 +52,7 @@ return [
     'non ancora iscritto' => 'Non sei ancora iscritto?',
 
     // pag. revisore
-    'hai ancora' => '¡Aún tiene',
+    'hai ancora' => 'Hai ancora ',
     'annunci da revisionare' => 'annuncio/i da revisionare!',
     'rifiuta' => 'Rifiuta',
     'accetta' => 'Accetta',
