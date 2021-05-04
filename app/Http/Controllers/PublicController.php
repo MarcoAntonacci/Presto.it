@@ -20,6 +20,10 @@ class PublicController extends Controller
         return view('index', compact('categories', 'ads'));
     }
 
+    public function profile() {
+        return view('profile');
+    }
+
     public function search (Request $request) {
 
         $tests=Category::all();
