@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Ad extends Model
 {
 
+
     use HasFactory;
     use Searchable;
 
@@ -34,7 +35,7 @@ class Ad extends Model
             'description'=> $this->description,
             'category'=>$category,
         ];
-        
+
 
         return $array;
     }

@@ -24,7 +24,7 @@
                       <p class="card-text text-justify">{{$ad->description}}</p>
                     </div>
                   </div>
-                  
+
                 {{-- Carousel --}}
                 <div class="col-12 col-md-5">
 
@@ -36,8 +36,24 @@
                       </div>
                       <div class="col-md-4">
                         <div class="card-body">
-                          <p class="card-text"></p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <p class="card-text">
+                              <ul>
+                             <li>Adult: {{$image->adult}}</li>
+                             <li> Spoof: {{$image->spoof}}</li>
+                             <li>Medical: {{$image->medical}}</li>
+                             <li>Violence: {{$image->violence}}</li>
+                             <li> Racy: {{$image->racy}}</li>
+                            </ul>
+                            <b>Labels</b>
+                            <ul>
+                                @if ($image->labels)
+                                    @foreach ($image->labels as $label)
+                                        <li>{{$label}}</li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </p>
+
                         </div>
                       </div>
                     </div>

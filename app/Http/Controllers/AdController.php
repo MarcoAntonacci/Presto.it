@@ -9,8 +9,10 @@ use App\Jobs\ResizeImage;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdRequest;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 class AdController extends Controller
 {
@@ -66,7 +68,7 @@ class AdController extends Controller
             Storage::move($image, $newFileName);
 
             // IMMAGINI IN ANNUNCI INDEX
-            dispatch(new ResizeImage( 
+            dispatch(new ResizeImage(
                 $newFileName,
                 414,
                 276
@@ -86,9 +88,13 @@ class AdController extends Controller
                 576
             ));
 
+
             $i->file=$newFileName;
             $i->ad_id=$ad->id;
             $i->save();
+
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
@@ -159,6 +165,8 @@ class AdController extends Controller
             120
         ));
 
+
+
         session()->push("images.{$uniqueSecret}", $fileName);
 
         return response()->json(
@@ -183,7 +191,7 @@ class AdController extends Controller
         $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
         $images = array_diff($images, $removedImages);
-        
+
         $data = [];
         foreach ($images as $image) {
             $data[] = [
