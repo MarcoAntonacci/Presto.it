@@ -25,8 +25,8 @@ class AdRequest extends FormRequest
     {
         return [
             'title'=>'required|max:20',
-            'price'=>'required',
-            'description'=>'required|numeric',
+            'price'=>'required|numeric',
+            'description'=>'required',
         ];
     }
 }
