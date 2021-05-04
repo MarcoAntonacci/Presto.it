@@ -44,15 +44,6 @@
         {{-- COPYRIGHT --}}
       <div class="text-center p-3 d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 SEO & Webmaster: <span class="tc-black ms-3"> Team C.O.D.A.</span>
-        <span>
-          @include('components.locale', ['lang'=>'it', 'nation'=>'it'])
-        </span>
-        <span>
-          @include('components.locale', ['lang'=>'en', 'nation'=>'gb'])
-        </span>
-        <span>
-          @include('components.locale', ['lang'=>'es', 'nation'=>'es'])
-        </span>
       </div>
     </div>
   </div>
