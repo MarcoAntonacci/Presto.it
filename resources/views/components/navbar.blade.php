@@ -45,33 +45,21 @@
                   {{ __('ui.ospite') }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{route('register')}}"><i class="fas fa-user-plus"></i> {{ __('ui.registrati') }}</a></li>
-                  <li><a class="dropdown-item" href="{{route('login')}}"><i class="fas fa-user-check"></i> {{ __('ui.accedi') }}</a></li>
+                  <li><a class="dropdown-item" href="{{route('register')}}"><i class="fas fa-user-plus tc-accent"></i> {{ __('ui.registrati') }}</a></li>
+                  <li><a class="dropdown-item" href="{{route('login')}}"><i class="fas fa-user-check tc-accent"></i> {{ __('ui.accedi') }}</a></li>
                 </ul>
                 @endauth
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Lingua
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <span>
-                    @include('components.locale', ['lang'=>'it', 'nation'=>'it'])
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    @include('components.locale', ['lang'=>'en', 'nation'=>'gb'])
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    @include('components.locale', ['lang'=>'es', 'nation'=>'es'])
-                  </span>
-                </li>
-              </ul>
-            </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Lingua
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>@include('components.locale', ['lang'=>'it', 'nation'=>'it'])</li>
+                  <li>@include('components.locale', ['lang'=>'en', 'nation'=>'gb'])</li>
+                  <li>@include('components.locale', ['lang'=>'es', 'nation'=>'es'])</li>
+                </ul>
+              </li>
           </ul>
         </div>
       </div>

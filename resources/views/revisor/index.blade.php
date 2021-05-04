@@ -9,57 +9,67 @@
                 <div class="row align-items-center justify-content-center">
 
                   {{-- Dati --}}
-                  <div class="col-12">
-                    <div class="card-body">
-                      <h5 class="card-title fs-2">{{$ad->title}}</h5>
-                      <p class="card-text tc-accent fs-3">€ {{$ad->price}}</p>
-                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
-                      <small class="card-text date-style"><i>{{$ad->created_at->format('d/m/Y')}}</i></small>
+                  <div class="row justify-content-center mb-3">
+                    <div class="col-12 col-md-5 card p-3 m-3">
+                      <h5>Titolo Annuncio:</h5>
+                      <h5 class="card-title fs-2 tc-accent">{{$ad->title}}</h5>
+                    </div>
+                    <div class="col-12 col-md-5 card p-3 m-3">
+                      <h5>Prezzo:</h5>
+                      <h5 class="card-title fs-2 tc-accent">€ {{$ad->price}}</h5>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-md-5 card p-3 m-3">
+                      <h5>Categoria:</h5>
+                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-accent fw-bold">{{$ad->category->name}}</p></a>
+                    </div>
+                    <div class="col-12 col-md-5 card p-3 m-3">
+                      <h5>Data:</h5>
+                      <small class="card-text fw-bold tc-accent"><i>{{$ad->created_at->format('d/m/Y')}}</i></small>
                     </div>
                   </div>
 
                   {{-- Descrizione --}}
                   <div class="row justify-content-center m-3">
-                    <div class="col-11 col-md-6 card">
+                    <div class="col-12 col-md-6 card p-3">
+                      <h5>Descrizione:</h5>
                       <p class="card-text text-justify">{{$ad->description}}</p>
                     </div>
                   </div>
 
                 {{-- Carousel --}}
-                <div class="col-12 col-md-5">
-
+                <div class="col-12">
                 @foreach ($ad->adImages as $image)
                   <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="col-md-8">
+                    <div class="row p-2">
+                      <div class="card-body col-md-6 border-end">
+                        <h5 class="tc-accent">Immagine</h5>
                         <img src="{{$image->getUrl(245, 163)}}" class="img-fluid" alt="...">
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3 border-end">
+                         <h5 class="tc-accent mt-3">Labels</h5>
+                          <div class="p-2">
+                            @if ($image->labels)
+                              @foreach ($image->labels as $label)
+                                  <p class="d-inline">{{$label}},</p>
+                              @endforeach
+                            @endif
+                          </div>                          
+                      </div>
+                      <div class="col-md-3">
                         <div class="card-body">
-                          <p class="card-text">
-                              <ul>
-                             <li>Adult: {{$image->adult}}</li>
-                             <li> Spoof: {{$image->spoof}}</li>
-                             <li>Medical: {{$image->medical}}</li>
-                             <li>Violence: {{$image->violence}}</li>
-                             <li> Racy: {{$image->racy}}</li>
-                            </ul>
-                            <b>Labels</b>
-                            <ul>
-                                @if ($image->labels)
-                                    @foreach ($image->labels as $label)
-                                        <li>{{$label}}</li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </p>
-
+                          <h5 class="tc-accent">Revision</h5>
+                            <p>Adult: {{$image->adult}}</p>
+                            <p>Spoof: {{$image->spoof}}</p>
+                            <p>Medical: {{$image->medical}}</p>
+                            <p>Violence: {{$image->violence}}</p>
+                            <p>Racy: {{$image->racy}}</p>                           
                         </div>
                       </div>
                     </div>
                   </div>
                   @endforeach
-
                 </div>
 
       </div>
