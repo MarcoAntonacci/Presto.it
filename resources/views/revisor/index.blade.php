@@ -72,18 +72,18 @@
       </div>
 
       {{-- Tasti --}}
-        {{-- <div class="row justify-content-center mt-4">
+        <div class="row justify-content-center mt-4">
           <div class="text-center">
             <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
           </div>
-          <div class="col-12 col-md-2">
+          {{-- <div class="col-12 col-md-2">
             <form method="POST" action="{{route('revisor.accept', $ad->id)}}">
                 @csrf
                     <button type="submit" class="btn btn-success mb-3">Accetta</button>
               </form>
-          </div>
+          </div> --}}
 
-        </div> --}}
+        </div>
 
     </div>
 
