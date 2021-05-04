@@ -23,6 +23,7 @@ Route::get('/search', [PublicController::class, 'search'])->name('search');
 Route::get('/lavora-con-noi', [PublicController::class, 'lavoraConNoi'])->name('lavora-con-noi')->middleware('auth');
 Route::post('/lavora-con-noi/submit', [PublicController::class, 'submit'])->name('lavora.submit');
 Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
+Route::get('/profile', [PublicController::class, 'profile'])->name('profile');
 
 // ANNUNCI
 Route::get('/annunci/index', [AdController::class, 'index'])->name('ad.index');
