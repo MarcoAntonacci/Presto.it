@@ -54,7 +54,14 @@
                     <div class="border-0 card-style shadow-ads" style="background-image: url({{$category->img}}); background-size:cover; background-position:center;">
                         <div class="overlay">
                             <div class="card-body d-flex justify-content-center">
-                                <h5 class="card-title"><i class="{{$category->icon}} me-2"></i>{{$category->name}}</h5>
+                                @if (Config::get('app.locale') == 'en')
+                                    <h5 class="card-title"><i class="{{$category->icon}} me-2"></i>{{$category->nameEN}}</h5>
+                                        @else @if (Config::get('app.locale') == 'es')
+                                                <h5 class="card-title"><i class="{{$category->icon}} me-2"></i>{{$category->nameES}}</h5>
+                                            @else
+                                                <h5 class="card-title"><i class="{{$category->icon}} me-2"></i>{{$category->name}}</h5>
+                                            @endif
+                                @endif
                               </div>
                               <div class="mb-3">
                                   <a href="{{route('category', ['cat'=>$category->id])}}" class="btn btn-outline-light position-absolute bottom-0 start-50 translate-middle-x">{{ __('ui.esplora') }}</a>
