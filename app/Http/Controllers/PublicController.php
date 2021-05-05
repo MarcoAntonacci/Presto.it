@@ -32,7 +32,7 @@ class PublicController extends Controller
         $ads = Ad::search($q)->orderBy('created_at', 'DESC')->get();
 
         foreach ($tests as $test) {
-            if ($q == $test->name) {
+            if ( strcasecmp("$q", "$test->name") == 0) {
                 if (count($ads) > 0){
                     $cat = $test->id;
                     return redirect(route('category', $cat));
