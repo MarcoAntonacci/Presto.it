@@ -65,7 +65,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
     
             $image = Image::load($srcPath);
     
-            $image->watermark(base_path('public/img/images.png'))
+            $image->watermark(base_path('public/img/blur-nuovo-1.png'))
             ->watermarkPosition('top-left')
             ->watermarkPadding($bounds[0][0], $bounds[0][1])
             ->watermarkWidth($w, Manipulations::UNIT_PIXELS)

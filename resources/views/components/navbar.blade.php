@@ -55,9 +55,9 @@
                   Lingua
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>@include('components.locale', ['lang'=>'it', 'nation'=>'it'])</li>
-                  <li>@include('components.locale', ['lang'=>'en', 'nation'=>'gb'])</li>
-                  <li>@include('components.locale', ['lang'=>'es', 'nation'=>'es'])</li>
+                  <li class="dropdown-item">@include('components.locale', ['lang'=>'it', 'nation'=>'it'])Italiano</li>
+                  <li class="dropdown-item">@include('components.locale', ['lang'=>'en', 'nation'=>'gb'])English</li>
+                  <li class="dropdown-item">@include('components.locale', ['lang'=>'es', 'nation'=>'es'])Español</li>
                 </ul>
               </li>
           </ul>

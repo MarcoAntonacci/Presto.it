@@ -1,7 +1,7 @@
-  <form method="POST" action="{{route('locale', $lang)}}">
+  <form style="display: inline" method="POST" action="{{route('locale', $lang)}}">
     @csrf
-    <button type="submit" class="btn-lingue" >
-      <span class="flag-icon flag-icon-{{$nation}} ms-3 "></span>
+    <button type="submit" class="btn-lingue">
+      <span class="flag-icon flag-icon-{{$nation}}"></span>
     </button>
   </form>
 
