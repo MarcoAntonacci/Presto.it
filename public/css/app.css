@@ -10955,6 +10955,28 @@ a{
 
 
 /* MASTHEAD */
+
+@media screen and (max-width: 992px) {
+    #call-to-action {
+     display: none;
+
+    }
+    .masthead {
+        height: 200px;
+        width: 100%;
+    }
+  }
+
+
+@media screen and (max-width: 992px) {
+    #call-to-action-2 {
+     display: none;
+    }
+    .masthead2 {
+        height: 200px;
+        width: 100%;
+    }
+  }
 .masthead{
   background-image: url(/img/cart-image.jfif);
   background-position: center;
@@ -11204,7 +11226,9 @@ Resources
   height: 200px;
 }
 
-
+.bottom-0 {
+    margin-bottom: 16px !important;
+}
 /* FOOTER */
 .mini-logo1{
     width: 100px;
@@ -11264,7 +11288,7 @@ Resources
 
 
 /* MINI SEARCHBAR */
- 
+
 #myBtn2 {
   display: block;
   background-color: var(--accent-light);

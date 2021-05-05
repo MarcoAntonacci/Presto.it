@@ -5,9 +5,12 @@
             <h2 class="mt-5 text-center">Il tuo profilo:</h2>
         </div>
         <div class="row justify-content-center">
-            <div class="col-1 col-md-8 mt-5">
+            <div class="col-12 col-md-4 mt-5 ">
+                <img src="/img/profilovuoto.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-4 mt-5">
                 <h5 class="mb-0">Nome Utente: </h5> <span>{{Auth::user()->name}}</span>
-                
+
                 @if (Auth::user()->is_revisor == 1)
                     <h5 class="mb-0 mt-3">Ruolo:</h5><span class="tc-accent"> Revisore</span>
                     @else

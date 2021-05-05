@@ -13,7 +13,7 @@
 
 @guest
     <div class="masthead m-0">
-        <div class="position-relative overflow-hidden p-3 p-md-5 text-center my-0">
+        <div class="position-relative overflow-hidden p-3 p-md-5 text-center my-0" id="call-to-action">
             <div class="col-md-5 p-lg-5 me-auto my-5 mast-smoke">
             <h1 class="display-4 tc-accent font-weight-normal">{{ __('ui.masthead1') }}</h1>
             <p class="lead font-weight-normal tc-black"></p>
@@ -23,7 +23,7 @@
     </div>
 @else
 <div class="masthead2 m-0">
-    <div class="position-relative overflow-hidden p-3 p-md-5 my-0 text-center">
+    <div class="position-relative overflow-hidden p-3 p-md-5 my-0 text-center" id="call-to-action-2">
         <div class="col-md-5 p-lg-5 me-auto my-5 mast-smoke">
         <h1 class="display-4 tc-black font-weight-normal">{{ __('ui.masthead2') }}</h1>
         <p class="lead font-weight-normal tc-black"></p>
@@ -50,14 +50,14 @@
         <h3 class="text-center my-5">{{ __('ui.nostre categorie') }}</h3>
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             @foreach ($categories as $category)
-            <div class="col-12 col-sm-6 col-md-3 mx-auto m-3">
+            <div class="col-12 col-sm-6 col-md-3 mx-auto m-3 position-relative">
                     <div class="border-0 card-style shadow-ads" style="background-image: url({{$category->img}}); background-size:cover; background-position:center;">
                         <div class="overlay">
-                            <div class="card-body d-flex align-items-center justify-content-center">
+                            <div class="card-body d-flex justify-content-center">
                                 <h5 class="card-title"><i class="{{$category->icon}} me-2"></i>{{$category->name}}</h5>
                               </div>
                               <div class="mb-3">
-                                  <a href="{{route('category', ['cat'=>$category->id])}}" class="btn btn-outline-light">{{ __('ui.esplora') }}</a>
+                                  <a href="{{route('category', ['cat'=>$category->id])}}" class="btn btn-outline-light position-absolute bottom-0 start-50 translate-middle-x">{{ __('ui.esplora') }}</a>
                               </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    
+
     {{-- ANNUNCI --}}
     <div class="container mb-5 pb-5">
         <div class="row">
@@ -75,7 +75,7 @@
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
             @foreach ($ads as $ad)
                 @if ($ad->is_accepted == true)
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 my-3">
                             <div class="card shadow-ads">
 
                                 @foreach ($ad->adImages as $key => $image)
@@ -83,7 +83,7 @@
                                     <img src="{{$image->getUrl(245, 163)}}" class="card-img-top" alt="...">
                                 </span>
                                 @endforeach
-                                
+
                                 <div class="card-body">
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <p class="card-text tc-accent">{{$ad->price}} €</p>

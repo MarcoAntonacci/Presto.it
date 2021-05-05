@@ -1,6 +1,6 @@
 <header>
     <div class="bg-nav">
-      <a href="{{route('homepage')}}"><img src="/img/presto-logo.png" class="mini-logo mx-auto" alt="Presto.it"></a>
+      <a href="{{route('homepage')}}"><img src="/img/presto-logo.png" class="mini-logo mx-auto mt-1" alt="Presto.it"></a>
     </div>
   <nav class="navbar navbar-expand-lg bg-nav navbar-light shadow-nav">
       <div class="container-fluid ">
@@ -32,7 +32,7 @@
                 <li><a class="dropdown-item" href="{{route('revisor.index')}}"><i class="fas fa-user-secret tc-accent"></i> {{ __('ui.zona rev') }}</a></li>
                 <li class="dropdown-item"><i class="fas fa-pause-circle tc-accent"></i> In sospeso: <span style=“color: green”>{{\App\Models\Ad::ToBeRevisionedCount()}}</span></li>
             @endif
-            
+
                 <li><a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-user-circle tc-accent"></i> {{ __('ui.profilo') }}</a></li>
                 <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();"><i class="fas fa-sign-out-alt tc-accent"></i> {{ __('ui.esci') }}</a></li>
                 <form method="POST" action="{{route('logout')}}" style="display: none" id="form-logout">
