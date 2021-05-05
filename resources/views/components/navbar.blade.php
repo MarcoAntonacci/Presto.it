@@ -1,6 +1,6 @@
 <header>
     <div class="bg-nav">
-      <a href="{{route('homepage')}}"><img src="/img/presto-logo.png" class="mini-logo mx-auto mt-1" alt="Presto.it"></a>
+      <a href="{{route('homepage')}}"><img src="/img/presto-logo.png" class="mini-logo mx-auto pt-1" alt="Presto.it"></a>
     </div>
   <nav class="navbar navbar-expand-lg bg-nav navbar-light shadow-nav">
       <div class="container-fluid ">
