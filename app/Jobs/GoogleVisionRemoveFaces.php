@@ -70,25 +70,25 @@ class GoogleVisionRemoveFaces implements ShouldQueue
             ->watermarkPadding($bounds[0][0], $bounds[0][1])
             ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
             ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
-            ->watermarkFit(Manipulations::FIT_STRETCH)
-            ->apply()
-            ->watermark(base_path('public/img/presto-watermark2.png'))
-            ->watermarkPadding(50)
-            ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
-            ->watermarkWidth(20, Manipulations::UNIT_PERCENT)
-            ->apply();
+            ->watermarkFit(Manipulations::FIT_STRETCH);
+            // ->apply()
+            // ->watermark(base_path('public/img/presto-watermark2.png'))
+            // ->watermarkPadding(50)
+            // ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
+            // ->watermarkWidth(20, Manipulations::UNIT_PERCENT)
+            // ->apply();
             
     
             $image->save($srcPath);
         }
 
-        $image = Image::load($srcPath);
-        $image->watermark(base_path('public/img/presto-watermark2.png'))
-        ->watermarkPadding(50)
-        ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
-        ->watermarkWidth(20, Manipulations::UNIT_PERCENT)
-        ->apply();
-        $image->save($srcPath);
+        // $image = Image::load($srcPath);
+        // $image->watermark(base_path('public/img/presto-watermark2.png'))
+        // ->watermarkPadding(50)
+        // ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
+        // ->watermarkWidth(20, Manipulations::UNIT_PERCENT)
+        // ->apply();
+        // $image->save($srcPath);
 
         $imageAnnotator->close();
 
