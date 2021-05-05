@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AdRequest;
 use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\File;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 
@@ -67,34 +68,17 @@ class AdController extends Controller
             $newFileName="public/ads/{$ad->id}/{$fileName}";
             Storage::move($image, $newFileName);
 
-            // IMMAGINI IN ANNUNCI INDEX
-            dispatch(new ResizeImage(
-                $newFileName,
-                414,
-                276
-            ));
-
-            // IMMAGINI IN HOMEPAGE
-            dispatch(new ResizeImage(
-                $newFileName,
-                245,
-                163
-            ));
-
-            // IMMAGINI IN ANNUNCI SHOW
-            dispatch(new ResizeImage(
-                $newFileName,
-                864,
-                576
-            ));
-
-
             $i->file=$newFileName;
             $i->ad_id=$ad->id;
             $i->save();
 
-            dispatch(new GoogleVisionSafeSearchImage($i->id));
-            dispatch(new GoogleVisionLabelImage($i->id));
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new ResizeImage($newFileName, 414, 276),
+                new ResizeImage($newFileName, 245, 163),
+                new ResizeImage($newFileName, 864, 576),
+            ])->dispatch($i->id);
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
