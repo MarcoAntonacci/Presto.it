@@ -2,20 +2,24 @@
 
 return [
     // masthead
-    'masthead1'=> "It's time to do business",
-    'masthead2'=>"Sell something great",
+    'masthead1'=> "It's time to do business!",
+    'masthead2'=>"Sell something great!",
     'ins masthead' => 'Enter your ad',
     
     // navbar
-    'i nostri annunci'=> 'Our announcements',
+    'i nostri annunci'=> 'Our ads',
     'ospite' => 'Welcome, Guest!',
     'registrati' => 'Sign in',
     'accedi' => 'Login',
     'ins il tuo annuncio' => 'Publish your ad',
     'benv rev' => 'Welcome',
-    'zona rev' => 'Reviewer area',
+    'zona rev' => 'Reviewer Zone',
     'profilo' => 'Profile',
-    'esci' => 'Exit',
+    'esci' => 'Logout',
+    'lingua' => 'Language',
+    'sospeso' => 'Pending:',
+
+
     
     // barra di ricerca
     'cerca' => 'Search',
@@ -24,14 +28,14 @@ return [
     // categorie e annunci index
     'nostre categorie' => 'Our categories:',
     'esplora' => 'Explore',
-    'ultimi annunci' => 'Latest ads placed',
+    'ultimi annunci' => 'Latest ads published',
     'dettaglio annuncio' => 'Ad detail',
 
     // footer 
-    'lavora con noi' => 'Work Area',
+    'lavora con noi' => 'Work with us',
 
     // pag. inserisci annuncio
-    'inserisci annuncio' => 'Place ad',
+    'inserisci annuncio' => 'Publish an ad',
     'titolo annuncio' => 'Ad title:',
     'prezzo' => 'Price:',
     'categoria' => 'Category:',
@@ -63,7 +67,7 @@ return [
     'torna indietro' => 'Go back to the reviewers area',
 
     // pag. categoria senza annunci
-    'msg no annunci' => 'Ops ... it seems there are no ads in this category yet ...',
+    'msg no annunci' => 'Ops... it seems there are no ads in this category yet...',
     'vuoi essere il primo' => 'Do you want to be the first?',
     
     // pag. lavora con noi

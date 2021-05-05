@@ -107,7 +107,7 @@
 @else
 <div class="text-center mt-5">
   <h3>{{ __('ui.niente da revisionare') }}</h3>
-  <img class="img-revisor mb-3" src="/img/Emptye.png" alt="Niente da fare">
+  <img id="empty" class="img-revisor mb-3" src="/img/Emptye.png" alt="Niente da fare">
   <div class="col-2 mx-auto">
     <a href="{{route('revisor.trash')}}" class="btn btn-primary">{{ __('ui.cestino') }}</a>
   </div>
@@ -115,5 +115,5 @@
 
 @endif
 
-<div class="dummyHeight"></div>
+
 </x-layout>

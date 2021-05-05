@@ -2,8 +2,8 @@
 
 return [
     // masthead
-    'masthead1' => "Hagamos negocios",
-    'masthead2' => "Vender algo genial",
+    'masthead1' => "Hagamos negocios!",
+    'masthead2' => "Vender algo genial!",
     'ins masthead' => 'Ingrese su anuncio',
 
     // navbar
@@ -12,14 +12,17 @@ return [
     'registrati' => 'Registrarse',
     'accedi' => 'Iniciar sesión',
     'ins il tuo annuncio' => '¡Publique su anuncio!',
-    'benv rev' => '¡Bienvenidos',
+    'benv rev' => '¡Bienvenido',
     'zona rev' => 'Área de revisores',
     'profilo' => 'Perfil',
     'esci' => 'Fuera',
+    'lingua' => 'Idioma',
+    'sospeso' => 'Suspendido:',
+
 
     // barra di ricerca
     'cerca' => 'Buscar',
-    'placeholder' => 'What are you looking for?',
+    'placeholder' => '¿Qué estás buscando?',
 
     // categorie index
     'nostre categorie' => 'Nuestras categorias:',

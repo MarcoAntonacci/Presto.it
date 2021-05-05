@@ -16,6 +16,10 @@ return [
     'zona rev' => 'Zona revisore',
     'profilo' => 'Profilo',
     'esci' => 'Esci',
+    'lingua' => 'Lingua',
+    'sospeso' => 'In sospeso:',
+
+
 
     // barra di ricerca
     'cerca' => 'Cerca',

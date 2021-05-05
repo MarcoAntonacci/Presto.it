@@ -9,7 +9,7 @@
         <div class="row">
             <div class="text-center">
               <h3>{{ __('ui.trovato nulla') }}</h3>
-              <img class='img-revisor' src="/img/ops.png" alt="">
+              <img id="empty" class='img-revisor' src="/img/ops.png" alt="">
             </div>
         </div>
         <div class="row">

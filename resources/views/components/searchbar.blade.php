@@ -18,7 +18,7 @@
             <span id="searchContainer" class="hide">
             <form class="d-flex" method="GET" action="{{route('search')}}">
                 <button id="miniBtn" class="btn btn-primary rounded-pill" type="submit"><i class="fas fa-search"></i></button>
-                <input id="miniSearch" class="form-control me-2 rounded-pill" name="q" type="search" placeholder="Cosa stai cercando?" aria-label="Cerca">             
+                <input id="miniSearch" class="form-control me-2 rounded-pill" name="q" type="search" placeholder="{{__('ui.placeholder')}}" aria-label="Cerca">             
             </form>
         </span>
         </div>

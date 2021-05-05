@@ -98,12 +98,12 @@
   @else
 <div class="text-center mt-5">
   <h3>Non ci sono annunci nel cestino</h3>
-  <img class="img-revisor mb-3" src="/img/Emptye.png" alt="Niente da fare">
+  <img id="empty" class="img-revisor mb-3" src="/img/Emptye.png" alt="Niente da fare">
   <div class="col-2 mx-auto">
     <a href="{{route('revisor.index')}}" class="btn btn-primary">Torna alla Zona Revisori</a>
   </div>
 </div>
 
     @endif
-<div class="dummyHeight"></div>
+
 </x-layout>

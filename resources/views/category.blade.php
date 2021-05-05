@@ -8,7 +8,7 @@
           @if (count($ads)==0)
           <div class="text-center">
               <h3>{{ __('ui.msg no annunci') }}</h3>
-              <img class="img-revisor" src="/img/ops.png" alt="Niente annunci">
+              <img id="empty" class="img-revisor" src="/img/ops.png" alt="Niente annunci">
               <p>{{ __('ui.vuoi essere il primo') }}</p>
               <a class="btn btn-outline-secondary" href="{{route('ad.create')}}">{{ __('ui.ins il tuo annuncio') }}</a>
             </div>

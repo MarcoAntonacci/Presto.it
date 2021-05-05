@@ -30,7 +30,13 @@
 
             @if(Auth::user()->is_revisor)
                 <li><a class="dropdown-item" href="{{route('revisor.index')}}"><i class="fas fa-user-secret tc-accent"></i> {{ __('ui.zona rev') }}</a></li>
-                <li class="dropdown-item"><i class="fas fa-pause-circle tc-accent"></i> In sospeso: <span style=“color: green”>{{\App\Models\Ad::ToBeRevisionedCount()}}</span></li>
+                <li class="dropdown-item"><i class="fas fa-pause-circle tc-accent"></i> {{__('ui.sospeso')}}
+                  @if (\App\Models\Ad::ToBeRevisionedCount() == 0)
+                    <span class="text-success">{{\App\Models\Ad::ToBeRevisionedCount()}}</span>
+                  @else
+                    <span class="text-danger">{{\App\Models\Ad::ToBeRevisionedCount()}}</span>
+                  @endif
+                  </li>
             @endif
 
                 <li><a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-user-circle tc-accent"></i> {{ __('ui.profilo') }}</a></li>
@@ -52,7 +58,7 @@
             </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Lingua
+                  {{__('ui.lingua')}}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li class="dropdown-item">@include('components.locale', ['lang'=>'it', 'nation'=>'it'])Italiano</li>
