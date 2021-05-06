@@ -24,7 +24,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$ad->title}}</h5>
                       <p class="card-text tc-accent">{{$ad->price}} €</p>
-                      <a href="{{route('category', ['cat'=>$relation->category->id])}}"><p class="card-text tc-black">{{$relation->category->name}}</p></a>
+                      <a href="{{route('category', ['cat'=>$ad->category->id])}}"><p class="card-text tc-black">{{$ad->category->name}}</p></a>
                       <hr>
                       <p class="card-text text-truncate">{{$ad->description}}</p>
                       <a href="{{route('ad.show', compact('ad'))}}" class="btn btn-primary">{{ __('ui.dettaglio annuncio') }}</a>
